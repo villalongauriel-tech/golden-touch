@@ -11,7 +11,7 @@
 * **Ubicación operativa:** Canning y Zona Sur (Buenos Aires, Argentina). *Nota: No cuenta con local físico a la calle; opera con entregas pactadas en puntos comerciales y seguros.*
 * **Canal de venta principal:** WhatsApp e Instagram.
 * **Canal online:** [https://golden-touch-five.vercel.app](https://golden-touch-five.vercel.app)
-* **Repositorio privado:** [https://github.com/villalongauriel-tech/golden-touch](https://github.com/villalongauriel-tech/golden-touch)
+* **Repositorio en GitHub:** [https://github.com/villalongauriel-tech/golden-touch](https://github.com/villalongauriel-tech/golden-touch)
 
 ---
 
