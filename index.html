@@ -6,7 +6,7 @@
   <title>Golden Touch · Tienda Apple & Plan Canje en Canning</title>
   <meta name="description" content="Especialistas en iPhone sellados de fábrica y seminuevos seleccionados en Canning. Cotizaciones transparentes, revisión integral y Plan Canje con atención personalizada.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#07080B">
+  <meta name="theme-color" content="#F8F8F6">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS Play CDN + Tema Dark Cinemático -->
+  <!-- Tailwind CSS Play CDN + paleta Golden Touch -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     window.tailwind = window.tailwind || {};
@@ -35,15 +35,16 @@
         extend: {
           colors: {
             obsidian: '#07080B',
-            darkest: '#000000',
-            graphite: '#111318',
-            surface: '#151821',
+            ivory: '#F8F8F6',
+            graphite: '#171A20',
+            surface: 'rgb(var(--gt-surface) / <alpha-value>)',
+            ink: 'rgb(var(--gt-ink) / <alpha-value>)',
+            muted: 'rgb(var(--gt-muted) / <alpha-value>)',
+            line: 'rgb(var(--gt-line) / <alpha-value>)',
+            accent: 'rgb(var(--gt-accent) / <alpha-value>)',
             gold: '#D7AA4A',
             'gold-light': '#F2D38A',
-            'gold-dark': '#B38A32',
-            silver: '#E4E5E8',
-            'gray-muted': '#9CA3AF',
-            'gray-dark': '#242834'
+            'gold-dark': '#79591C'
           },
           fontFamily: {
             sans: ['Manrope', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif']
@@ -58,40 +59,144 @@
   <style type="text/tailwindcss">
     @layer components {
       .btn-gold {
-        @apply inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-gold via-[#E2BE66] to-gold px-7 py-3 text-sm font-bold text-obsidian shadow-[0_0_25px_rgba(215,170,74,0.35)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(215,170,74,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian;
+        @apply inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-full bg-gold px-7 py-3 text-sm font-bold text-obsidian shadow-sm transition duration-200 hover:bg-gold-light hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
       }
       .btn-glass {
-        @apply inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-full border border-white/15 bg-white/[0.05] px-7 py-3 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/[0.1] hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian;
+        @apply inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-full border border-line bg-surface px-7 py-3 text-sm font-bold text-ink transition duration-200 hover:border-gold hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
       }
       .btn-card {
-        @apply inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.07] px-5 py-2.5 text-xs sm:text-sm font-bold text-white transition-all duration-300 hover:border-gold hover:bg-gold hover:text-obsidian hover:shadow-[0_0_20px_rgba(215,170,74,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold;
+        @apply inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-line bg-ivory px-5 py-2.5 text-sm font-bold text-obsidian transition duration-200 hover:border-gold hover:bg-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
       }
       .glass-card {
-        @apply rounded-3xl border border-white/[0.08] bg-surface/50 backdrop-blur-xl transition-all duration-500 hover:border-gold/30 hover:bg-surface/80;
+        @apply rounded-3xl border border-line bg-surface transition duration-300 hover:border-gold/60;
       }
       .eyebrow-badge {
-        @apply inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold;
+        @apply inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-accent;
       }
       .section-headline {
-        @apply text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl;
+        @apply text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl;
       }
     }
   </style>
   <style>
+    :root {
+      --gt-surface: 255 255 255;
+      --gt-ink: 7 8 11;
+      --gt-muted: 86 90 97;
+      --gt-line: 216 218 221;
+      /* Un tono más oscuro del dorado para leer texto sobre marfil. */
+      --gt-accent: 121 89 28;
+      color-scheme: light;
+    }
+    .theme-dark {
+      --gt-surface: 33 37 45;
+      --gt-ink: 248 248 246;
+      --gt-muted: 216 218 221;
+      --gt-line: 65 69 77;
+      --gt-accent: 215 170 74;
+      background-color: #171A20;
+      color: rgb(var(--gt-ink));
+    }
+    html { scroll-padding-top: 6rem; }
     body {
-      background-color: #07080B;
-      color: #E4E5E8;
+      background-color: #F8F8F6;
+      color: #07080B;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    /* Sutil iluminación de fondo cinemática */
+    /* Fondos claros, acento cálido y sombras suaves. */
     .bg-radial-hero {
-      background: radial-gradient(circle 800px at 50% -100px, rgba(215, 170, 74, 0.16), transparent 75%),
-                  radial-gradient(circle 600px at 80% 300px, rgba(255, 255, 255, 0.03), transparent 70%),
-                  #07080B;
+      background: radial-gradient(ellipse at 85% 35%, #D7AA4A14, transparent 55%), #F8F8F6;
     }
-    .bg-radial-subtle {
-      background: radial-gradient(circle 700px at 50% 50%, rgba(215, 170, 74, 0.08), transparent 70%);
+    .bg-radial-subtle { background-color: #F8F8F6; }
+    .glass-card { box-shadow: 0 12px 32px #171A2008; }
+    .theme-dark .glass-card { box-shadow: none; }
+    .hero-image { filter: drop-shadow(0 20px 24px #171A2026); }
+    .product-image { filter: drop-shadow(0 12px 14px #171A201F); }
+    #hero-title { letter-spacing: -.055em; }
+    #site-header.is-scrolled { box-shadow: 0 4px 20px #171A200A; }
+    .brand-lockup {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 10px;
+      border-radius: 6px;
+    }
+    /* Ventana sobre el monograma del JPG original: el archivo no se modifica. */
+    .brand-symbol {
+      position: relative;
+      display: block;
+      flex-shrink: 0;
+      width: 56px;
+      aspect-ratio: 475 / 338;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #F8F8F6;
+    }
+    .brand-symbol img {
+      position: absolute;
+      width: 155.3685%;
+      max-width: none;
+      height: auto;
+      left: -28.4211%;
+      top: -36.6864%;
+    }
+    .brand-name {
+      display: grid;
+      gap: 3px;
+      color: rgb(var(--gt-ink));
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: .16em;
+    }
+    .brand-name span:last-child { color: rgb(var(--gt-accent)); }
+    .brand-caption {
+      display: none;
+      margin-top: 7px;
+      color: rgb(var(--gt-muted));
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .brand-lockup--footer { gap: 16px; }
+    .brand-lockup--footer .brand-symbol { width: 90px; }
+    .brand-lockup--footer .brand-name { font-size: 20px; }
+    .brand-lockup--footer .brand-caption { display: block; }
+    @media (min-width: 640px) {
+      .brand-lockup { gap: 12px; }
+      .brand-symbol { width: 78px; }
+      .brand-name { font-size: 18px; }
+      .brand-caption { display: block; }
+    }
+    @media (max-width: 379px) {
+      #site-header .header-whatsapp { padding-inline: 12px !important; }
+      #site-header .header-whatsapp span { display: none; }
+    }
+    #catalogo [role="tablist"] { align-self: flex-start; max-width: 100%; }
+    #catalogo [role="tab"] { min-height: 44px; }
+    #catalogo [role="tab"][aria-selected="true"] {
+      background: #171A20;
+      color: #F8F8F6;
+    }
+    .family-button { min-height: 48px; padding: 12px 22px; border: 1px solid #D8DADD; border-radius: 16px; color: #565A61; background: #FFF; font-weight: 800; transition: background .2s, color .2s; }
+    .family-button[aria-pressed="true"] { background: #171A20; color: #F8F8F6; border-color: #171A20; }
+    .family-button:focus-visible { outline: 3px solid #D7AA4A; outline-offset: 3px; }
+    [hidden] { display: none !important; }
+    .color-swatch { position: relative; }
+    .color-swatch::after { content: ''; position: absolute; inset: -8px; }
+    .color-swatch[data-status="agotado"], .color-swatch[data-status="no_listado"] { opacity: .65; }
+    a[aria-disabled="true"] { opacity: .55; cursor: not-allowed; pointer-events: none; }
+    .color-swatch[data-status="agotado"]::before, .color-swatch[data-status="no_listado"]::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(135deg, transparent 44%, #FFF 44%, #FFF 48%, #171A20 48%, #171A20 54%, #FFF 54%, #FFF 58%, transparent 58%); }
+    .stock-label { font-size: 11px; color: #565A61; }
+    .stock-label[data-status="agotado"] { text-decoration: line-through; }
+    @media (max-width: 639px) {
+      #catalogo [role="tablist"] { width: 100%; border-radius: 20px; }
+      #catalogo [role="tab"] { flex: 1; padding: 10px 12px; border-radius: 16px; }
+      #inicio .hero-image { max-height: 280px; width: auto; max-width: 100%; }
+      #inicio .hero-layout { gap: 32px; }
     }
 
     /* Animación del acordeón */
@@ -123,46 +228,49 @@
       *, *::before, *::after {
         animation: none !important;
         transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/liquid-glass.css">
+  <meta name="gt-release" content="2026-10-16-liquid-glass">
 </head>
 
-<body class="bg-obsidian font-sans antialiased text-silver selection:bg-gold selection:text-obsidian">
+<body class="bg-ivory font-sans antialiased text-ink selection:bg-gold selection:text-obsidian">
   <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-gold focus:px-6 focus:py-3 focus:text-sm focus:font-extrabold focus:text-obsidian">Saltar al contenido</a>
 
-  <!-- ============ A. NAVBAR FIJA DE LUJO ============ -->
-  <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-obsidian/85 backdrop-blur-xl transition duration-300">
+  <!-- ============ A. NAVEGACIÓN PRINCIPAL ============ -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-line bg-ivory/85 backdrop-blur-xl transition duration-300">
     <nav aria-label="Principal" class="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 sm:gap-6 px-4 sm:px-8">
       
       <!-- Logo Oficial Golden Touch -->
-      <a href="#inicio" class="flex shrink-0 items-center gap-2.5 sm:gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-full" aria-label="Golden Touch, ir al inicio">
-        <img src="Logo.jpg" alt="Golden Touch Logo" class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover ring-2 ring-gold/40 shadow-[0_0_15px_rgba(215,170,74,0.3)] transition duration-300 group-hover:ring-gold group-hover:scale-105">
-        <div class="flex flex-col">
-          <span class="text-sm sm:text-lg font-extrabold tracking-[0.14em] sm:tracking-[0.16em] text-white">GOLDEN TOUCH</span>
-          <span class="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] sm:tracking-[0.25em] text-gold uppercase -mt-0.5 sm:-mt-1">Apple & Plan Canje</span>
-        </div>
+      <a href="#inicio" class="brand-lockup focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-ivory" aria-label="Golden Touch, ir al inicio">
+        <span class="brand-symbol" aria-hidden="true"><img src="Logo.jpg" alt="" width="738" height="738"></span>
+        <span>
+          <span class="brand-name"><span>GOLDEN</span><span>TOUCH</span></span>
+          <span class="brand-caption">Apple & Plan Canje</span>
+        </span>
       </a>
 
       <!-- Menú Desktop -->
-      <ul class="hidden items-center gap-8 text-sm font-semibold text-neutral-300 lg:flex">
-        <li><a class="transition duration-200 hover:text-gold" href="#inicio">Inicio</a></li>
-        <li><a class="transition duration-200 hover:text-gold" href="#plan-canje">Plan Canje</a></li>
-        <li><a class="transition duration-200 hover:text-gold" href="#catalogo">Catálogo</a></li>
-        <li><a class="transition duration-200 hover:text-gold" href="#garantia">Garantía</a></li>
-        <li><a class="transition duration-200 hover:text-gold" href="#zona">Zona de Entrega</a></li>
-        <li><a class="transition duration-200 hover:text-gold" href="#faq">Preguntas</a></li>
+      <ul class="hidden items-center gap-8 text-sm font-semibold text-muted xl:flex">
+        <li><a class="transition duration-200 hover:text-accent" href="#inicio">Inicio</a></li>
+        <li><a class="transition duration-200 hover:text-accent" href="#catalogo">Catálogo</a></li>
+        <li><a class="transition duration-200 hover:text-accent" href="#plan-canje">Plan Canje</a></li>
+        <li><a class="transition duration-200 hover:text-accent" href="#garantia">Garantía</a></li>
+        <li><a class="transition duration-200 hover:text-accent" href="#zona">Zona de Entrega</a></li>
+        <li><a class="transition duration-200 hover:text-accent" href="#faq">Preguntas</a></li>
       </ul>
 
       <!-- CTA WhatsApp & Hamburguesa -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <a data-wa="general" href="#" class="btn-gold !min-h-[40px] !px-3.5 sm:!px-5 text-xs sm:text-sm" aria-label="Cotizar por WhatsApp">
+        <a data-wa="general" href="#" class="header-whatsapp btn-gold !min-h-[40px] !px-3.5 sm:!px-5 text-xs sm:text-sm" aria-label="Cotizar por WhatsApp">
           <svg aria-hidden="true" class="h-4 w-4 shrink-0 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.41 0-2.81-.36-4.04-1.06l-.29-.17-3.11.82.83-3.03-.19-.3a8.17 8.17 0 0 1-1.25-4.49c0-4.54 3.7-8.24 8.24-8.24m4.54 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.61c.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29"/></svg>
           <span class="hidden sm:inline">Cotizar por WhatsApp</span>
           <span class="inline sm:hidden">Cotizar</span>
         </a>
         
-        <button id="menu-btn" type="button" class="grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full border border-white/15 bg-white/[0.05] text-white transition hover:border-gold hover:text-gold lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <button id="menu-btn" type="button" class="grid h-11 w-11 place-items-center rounded-full border border-line bg-surface text-ink transition hover:border-gold hover:text-accent xl:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
           <svg data-icon="open" aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
           <svg data-icon="close" aria-hidden="true" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
         </button>
@@ -170,25 +278,25 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="hidden border-t border-white/[0.08] bg-obsidian/95 px-6 py-6 backdrop-blur-2xl lg:hidden">
-      <ul class="flex flex-col gap-4 text-base font-bold text-white">
-        <li><a class="nav-mobile-link block py-2 hover:text-gold" href="#inicio">Inicio</a></li>
-        <li><a class="nav-mobile-link block py-2 hover:text-gold" href="#plan-canje">Plan Canje</a></li>
-        <li><a class="nav-mobile-link block py-2 hover:text-gold" href="#catalogo">Catálogo</a></li>
-        <li><a class="nav-mobile-link block py-2 hover:text-gold" href="#garantia">Garantía & Revisión</a></li>
-        <li><a class="nav-mobile-link block py-2 hover:text-gold" href="#zona">Zona de Entrega</a></li>
-        <li><a class="nav-mobile-link block py-2 hover:text-gold" href="#faq">Preguntas Frecuentes</a></li>
+    <div id="mobile-menu" class="hidden border-t border-line bg-ivory/95 px-6 py-6 backdrop-blur-2xl xl:hidden">
+      <ul class="flex flex-col gap-4 text-base font-bold text-ink">
+        <li><a class="nav-mobile-link block py-2 hover:text-accent" href="#inicio">Inicio</a></li>
+        <li><a class="nav-mobile-link block py-2 hover:text-accent" href="#catalogo">Catálogo</a></li>
+        <li><a class="nav-mobile-link block py-2 hover:text-accent" href="#plan-canje">Plan Canje</a></li>
+        <li><a class="nav-mobile-link block py-2 hover:text-accent" href="#garantia">Garantía & Revisión</a></li>
+        <li><a class="nav-mobile-link block py-2 hover:text-accent" href="#zona">Zona de Entrega</a></li>
+        <li><a class="nav-mobile-link block py-2 hover:text-accent" href="#faq">Preguntas Frecuentes</a></li>
         <li class="pt-2"><a data-wa="general" href="#" class="btn-gold w-full">Cotizar por WhatsApp</a></li>
       </ul>
     </div>
   </header>
 
   <main id="contenido">
-    <!-- ============ B. HERO CINEMÁTICO (APPLE STYLE) ============ -->
-    <section id="inicio" class="relative overflow-hidden bg-radial-hero pb-24 pt-32 sm:pt-40 lg:pb-36" aria-labelledby="hero-title">
+    <!-- ============ B. PRESENTACIÓN ============ -->
+    <section id="inicio" class="relative overflow-hidden bg-radial-hero pb-14 pt-28 sm:pt-32 lg:pb-20" aria-labelledby="hero-title">
       <div class="relative mx-auto max-w-7xl px-6 sm:px-8">
         
-        <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="hero-layout grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <!-- Columna Texto -->
           <div>
             <div class="eyebrow-badge">
@@ -196,12 +304,12 @@
               Atención personalizada · Canning & Zona Sur
             </div>
 
-            <h1 id="hero-title" class="mt-6 text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-white">
+            <h1 id="hero-title" class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-ink">
               Tu próximo iPhone. <br>
-              <span class="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">Poder, transparencia</span> y respaldo.
+              <span class="text-accent">Poder, transparencia</span> y respaldo.
             </h1>
 
-            <p class="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-neutral-300">
+            <p class="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-muted">
               Equipos sellados de fábrica y seminuevos seleccionados con diagnóstico técnico punto a punto. Cotizá en el acto y renová tu equipo con nuestro <strong>Plan Canje transparente</strong>.
             </p>
 
@@ -212,16 +320,16 @@
 
             <!-- Trust Badges de Apple Style -->
             <ul class="mt-12 grid gap-3 sm:grid-cols-3" aria-label="Beneficios destacados">
-              <li class="flex items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5 text-xs font-bold text-neutral-200 backdrop-blur-md">
-                <svg class="h-5 w-5 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M7 10v4M11 10v4"/></svg>
+              <li class="flex items-center gap-3 rounded-2xl border border-line bg-surface p-3.5 text-xs font-bold text-ink backdrop-blur-md">
+                <svg class="h-5 w-5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M7 10v4M11 10v4"/></svg>
                 Hardware & Batería 100% testeados
               </li>
-              <li class="flex items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5 text-xs font-bold text-neutral-200 backdrop-blur-md">
-                <svg class="h-5 w-5 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <li class="flex items-center gap-3 rounded-2xl border border-line bg-surface p-3.5 text-xs font-bold text-ink backdrop-blur-md">
+                <svg class="h-5 w-5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
                 Garantía escrita 3 y 6 meses
               </li>
-              <li class="flex items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5 text-xs font-bold text-neutral-200 backdrop-blur-md">
-                <svg class="h-5 w-5 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg>
+              <li class="flex items-center gap-3 rounded-2xl border border-line bg-surface p-3.5 text-xs font-bold text-ink backdrop-blur-md">
+                <svg class="h-5 w-5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg>
                 Hasta 4 cuotas · Planes a medida
               </li>
             </ul>
@@ -233,23 +341,23 @@
             <div aria-hidden="true" class="pointer-events-none absolute -inset-4 rounded-full bg-gold/15 blur-3xl"></div>
             
             <div class="relative flex flex-col items-center">
-              <img src="assets/16-pro.png" alt="iPhone 16 Pro Max en acabado Titanio Desierto, Titanio Natural, Blanco y Negro" class="relative z-10 h-auto w-full max-w-[420px] drop-shadow-[0_25px_40px_rgba(0,0,0,0.8)] transition duration-700 hover:scale-[1.03]">
+              <img src="assets/16-pro.png" alt="iPhone 16 Pro Max en acabado Titanio Desierto, Titanio Natural, Blanco y Negro" class="relative z-10 h-auto w-full max-w-[420px] hero-image transition duration-700 hover:scale-[1.03]">
 
               <!-- Floating Spec Pill 1 -->
-              <div class="absolute -left-2 top-10 z-20 hidden sm:flex items-center gap-3 rounded-2xl border border-white/15 bg-obsidian/80 px-4 py-3 backdrop-blur-xl shadow-2xl">
-                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-gold/20 text-gold text-xs font-bold">★</span>
+              <div class="absolute -left-2 top-10 z-20 hidden sm:flex items-center gap-3 rounded-2xl border border-line bg-ivory/80 px-4 py-3 backdrop-blur-xl shadow-lg">
+                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-gold/20 text-accent text-xs font-bold">★</span>
                 <div>
-                  <p class="text-[11px] font-bold uppercase tracking-wider text-gold">Titanio Pro</p>
-                  <p class="text-xs font-semibold text-white">Diseño ultraligero y resistente</p>
+                  <p class="text-[11px] font-bold uppercase tracking-wider text-accent">Titanio Pro</p>
+                  <p class="text-xs font-semibold text-ink">Diseño ultraligero y resistente</p>
                 </div>
               </div>
 
               <!-- Floating Spec Pill 2 -->
-              <div class="absolute -right-2 bottom-12 z-20 hidden sm:flex items-center gap-3 rounded-2xl border border-white/15 bg-obsidian/80 px-4 py-3 backdrop-blur-xl shadow-2xl">
-                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-gold/20 text-gold text-xs font-bold">✓</span>
+              <div class="absolute -right-2 bottom-12 z-20 hidden sm:flex items-center gap-3 rounded-2xl border border-line bg-ivory/80 px-4 py-3 backdrop-blur-xl shadow-lg">
+                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-gold/20 text-accent text-xs font-bold">✓</span>
                 <div>
-                  <p class="text-[11px] font-bold uppercase tracking-wider text-gold">Diagnóstico Completo</p>
-                  <p class="text-xs font-semibold text-white">Cada unidad verificada y lista</p>
+                  <p class="text-[11px] font-bold uppercase tracking-wider text-accent">Diagnóstico Completo</p>
+                  <p class="text-xs font-semibold text-ink">Cada unidad verificada y lista</p>
                 </div>
               </div>
             </div>
@@ -259,17 +367,111 @@
       </div>
     </section>
 
-    <!-- ============ C. PLAN CANJE (ESTILO APPLE TRADE IN) ============ -->
-    <section id="plan-canje" class="relative border-y border-white/[0.08] bg-darkest py-24 sm:py-32" aria-labelledby="canje-title">
+    <!-- ============ C. CATÁLOGO INTERACTIVO (APPLE STORE SHOWROOM) ============ -->
+    <section id="catalogo" class="py-16 sm:py-24 bg-radial-subtle" aria-labelledby="catalogo-title">
+      <div class="mx-auto max-w-7xl px-6 sm:px-8">
+
+        <div>
+          <div class="eyebrow-badge">Catálogo Golden Touch</div>
+          <h2 id="catalogo-title" class="section-headline mt-4">Encontrá tu próximo equipo.</h2>
+          <p class="mt-3 text-base text-muted">Explorá el catálogo y consultanos por el equipo que buscás.</p>
+        </div>
+        <div class="catalog-families mt-7 flex" role="group" aria-label="Tipo de equipo">
+          <button type="button" data-family="iphone" aria-pressed="true" aria-controls="family-iphone" class="family-button">iPhone</button>
+          <button type="button" data-family="watch" aria-pressed="false" aria-controls="family-inquiry" class="family-button">Apple Watch</button>
+          <button type="button" data-family="mac" aria-pressed="false" aria-controls="family-inquiry" class="family-button">Mac</button>
+          <button type="button" data-family="ipad" aria-pressed="false" aria-controls="family-inquiry" class="family-button">iPad</button>
+          <button type="button" data-family="audio" aria-pressed="false" aria-controls="family-inquiry" class="family-button">AirPods</button>
+          <button type="button" data-family="gaming" aria-pressed="false" aria-controls="family-inquiry" class="family-button">PlayStation</button>
+          <button type="button" data-family="accesorios" aria-pressed="false" aria-controls="family-inquiry" class="family-button">Accesorios</button>
+
+        </div>
+
+        <div id="family-iphone" class="mt-7">
+        <div class="flex flex-col gap-4">
+          <h3 class="text-lg font-bold text-ink">iPhone · Elegí la condición</h3>
+          <!-- Selector de Pestañas WAI-ARIA -->
+          <div role="tablist" aria-label="Categorías de catálogo" class="inline-flex rounded-full border border-line bg-surface/80 p-1.5 backdrop-blur-xl">
+            <button type="button" role="tab" id="tab-sellados" aria-controls="panel-sellados" aria-selected="true" tabindex="0"
+              class="rounded-full px-6 py-2.5 text-xs sm:text-sm font-extrabold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent text-muted hover:text-ink">
+              Nuevos Sellados
+            </button>
+            <button type="button" role="tab" id="tab-seminuevos" aria-controls="panel-seminuevos" aria-selected="false" tabindex="-1"
+              class="rounded-full px-6 py-2.5 text-xs sm:text-sm font-extrabold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent text-muted hover:text-ink">
+              Seminuevos Seleccionados
+            </button>
+            <button type="button" role="tab" id="tab-openbox" aria-controls="panel-openbox" aria-selected="false" tabindex="-1"
+              class="rounded-full px-5 py-2.5 text-xs sm:text-sm font-extrabold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent text-muted hover:text-ink">
+              Open box
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div class="text-sm leading-relaxed text-muted">
+            <p>Trabajamos principalmente por pedido y con stock rotativo.</p>
+            <p id="catalog-date" class="mt-1 text-xs"></p>
+          </div>
+          <div class="w-full sm:max-w-xs">
+            <label for="catalog-search" class="mb-2 block text-sm font-semibold text-ink">Buscar modelo</label>
+            <input id="catalog-search" type="search" placeholder="Ej.: iPhone 15 Pro" class="w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          </div>
+        </div>
+        <noscript><p class="mt-6 text-sm text-muted">Activá JavaScript para ver el catálogo o <a class="underline" href="https://wa.me/5491125591488">consultanos por WhatsApp</a>.</p></noscript>
+
+        <!-- Paneles de Catálogo -->
+        <div id="panel-sellados" role="tabpanel" aria-labelledby="tab-sellados" tabindex="0" class="mt-12 focus-visible:outline-none">
+          <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-catalog="sellados"></ul>
+          <p data-empty hidden class="text-sm text-muted" role="status"></p>
+        </div>
+
+        <div id="panel-seminuevos" role="tabpanel" aria-labelledby="tab-seminuevos" tabindex="0" class="mt-12 focus-visible:outline-none" hidden>
+          <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-catalog="seminuevos"></ul>
+          <p data-empty hidden class="text-sm text-muted" role="status"></p>
+        </div>
+
+        <div id="panel-openbox" role="tabpanel" aria-labelledby="tab-openbox" tabindex="0" class="mt-12 focus-visible:outline-none" hidden>
+          <p class="mb-6 text-sm leading-relaxed text-muted">Equipos con caja abierta. Consultanos el estado, la batería y los accesorios de cada unidad.</p>
+          <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-catalog="openbox"></ul>
+          <p data-empty hidden class="text-sm text-muted" role="status"></p>
+        </div>
+
+        </div>
+        <div id="family-inquiry" class="mt-8 rounded-3xl border border-line bg-surface p-8 sm:p-12" hidden>
+          <p class="eyebrow-badge">Consulta personalizada</p>
+          <h3 id="family-title" class="mt-4 text-3xl font-extrabold text-ink"></h3>
+          <p id="family-copy" class="mt-4 max-w-xl text-base leading-relaxed text-muted">Contanos qué modelo buscás. Te confirmamos las opciones, el precio y la disponibilidad por WhatsApp.</p>
+          <ul id="family-products" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" hidden></ul>
+          <a id="family-contact" class="btn-gold mt-6" href="https://wa.me/5491125591488">Consultar</a>
+        </div>
+
+        <!-- Nota Obligatoria del Manual y Prompt -->
+        <div class="mt-14 rounded-2xl border border-line bg-surface p-6 backdrop-blur-md">
+          <div class="flex items-start gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/20 text-accent font-bold">i</span>
+            <div class="space-y-1">
+              <p class="text-sm font-bold text-ink">Trabajamos principalmente por pedido y stock rotativo.</p>
+              <p class="text-xs leading-relaxed text-muted">
+                Los precios son referencias de contado en dólares estadounidenses para la opción elegida. Confirmamos precio, disponibilidad y condición de la unidad al consultar. Las imágenes y las muestras de color son ilustrativas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ D. PLAN CANJE (ESTILO APPLE TRADE IN) ============ -->
+    <section id="plan-canje" class="theme-dark relative border-y border-line py-16 sm:py-24" aria-labelledby="canje-title">
       <div class="relative mx-auto max-w-7xl px-6 sm:px-8">
         
         <div class="max-w-3xl">
           <div class="eyebrow-badge">Plan Canje Golden Touch</div>
           <h2 id="canje-title" class="section-headline mt-4">
             Tu iPhone actual vale más. <br>
-            <span class="text-neutral-400">Renovalo sin letra chica.</span>
+            <span class="text-muted">Renovalo sin letra chica.</span>
           </h2>
-          <p class="mt-4 text-base sm:text-lg leading-relaxed text-neutral-300">
+          <p class="mt-4 text-base sm:text-lg leading-relaxed text-muted">
             Entregás tu equipo actual como parte de pago y abonás únicamente la diferencia. Un proceso rápido, seguro y con cotización en el acto.
           </p>
         </div>
@@ -277,36 +479,36 @@
         <!-- 3 Pasos Trade In -->
         <ol class="mt-14 grid gap-6 md:grid-cols-3">
           <li class="glass-card p-8 group">
-            <span class="text-xs font-extrabold uppercase tracking-[0.25em] text-gold">Paso 01</span>
-            <h3 class="mt-4 text-xl font-extrabold text-white">Datos de tu equipo</h3>
-            <p class="mt-3 text-sm leading-relaxed text-neutral-300">
+            <span class="text-xs font-extrabold uppercase tracking-[0.25em] text-accent">Paso 01</span>
+            <h3 class="mt-4 text-xl font-extrabold text-ink">Datos de tu equipo</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">
               Nos contás qué modelo tenés, capacidad de almacenamiento y porcentaje de batería. Si podés, sumanos algunas fotos del estado estético.
             </p>
-            <div class="mt-6 flex items-center gap-2 text-xs font-bold text-gold/80">
+            <div class="mt-6 flex items-center gap-2 text-xs font-bold text-accent/80">
               <span>Rápido y sin compromiso</span>
               <span>→</span>
             </div>
           </li>
 
           <li class="glass-card p-8 group">
-            <span class="text-xs font-extrabold uppercase tracking-[0.25em] text-gold">Paso 02</span>
-            <h3 class="mt-4 text-xl font-extrabold text-white">Cotización justa</h3>
-            <p class="mt-3 text-sm leading-relaxed text-neutral-300">
+            <span class="text-xs font-extrabold uppercase tracking-[0.25em] text-accent">Paso 02</span>
+            <h3 class="mt-4 text-xl font-extrabold text-ink">Cotización justa</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">
               Te pasamos un valor de toma realista y transparente basado en la cotización vigente del mercado para esa condición exacta.
             </p>
-            <div class="mt-6 flex items-center gap-2 text-xs font-bold text-gold/80">
+            <div class="mt-6 flex items-center gap-2 text-xs font-bold text-accent/80">
               <span>Valor real de reventa</span>
               <span>→</span>
             </div>
           </li>
 
           <li class="glass-card p-8 group">
-            <span class="text-xs font-extrabold uppercase tracking-[0.25em] text-gold">Paso 03</span>
-            <h3 class="mt-4 text-xl font-extrabold text-white">Revisión y entrega</h3>
-            <p class="mt-3 text-sm leading-relaxed text-neutral-300">
+            <span class="text-xs font-extrabold uppercase tracking-[0.25em] text-accent">Paso 03</span>
+            <h3 class="mt-4 text-xl font-extrabold text-ink">Revisión y entrega</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">
               Coordinamos en Canning o punto seguro. Revisamos el teléfono en mano, te ayudamos con la migración de datos y pagás solo la diferencia.
             </p>
-            <div class="mt-6 flex items-center gap-2 text-xs font-bold text-gold/80">
+            <div class="mt-6 flex items-center gap-2 text-xs font-bold text-accent/80">
               <span>En mano y al instante</span>
               <span>✓</span>
             </div>
@@ -314,153 +516,104 @@
         </ol>
 
         <!-- CTA & Callout de Privacidad -->
-        <div class="mt-12 flex flex-col items-start justify-between gap-6 rounded-3xl border border-gold/30 bg-gradient-to-r from-gold/10 via-surface to-gold/5 p-8 sm:flex-row sm:items-center">
+        <div class="mt-12 flex flex-col items-start justify-between gap-6 rounded-3xl border border-gold/30 bg-surface p-8 sm:flex-row sm:items-center">
           <div>
-            <h3 class="text-lg font-extrabold text-white">¿Querés saber cuánto vale tu iPhone hoy?</h3>
-            <p class="mt-1 text-sm text-neutral-300">Te cotizamos en minutos con atención personalizada por WhatsApp.</p>
+            <h3 class="text-lg font-extrabold text-ink">¿Querés saber cuánto vale tu iPhone hoy?</h3>
+            <p class="mt-1 text-sm text-muted">Te cotizamos en minutos con atención personalizada por WhatsApp.</p>
           </div>
           <a data-wa="canje" href="#" class="btn-gold shrink-0">Cotizar mi Plan Canje</a>
         </div>
 
-        <p class="mt-4 text-xs text-neutral-500">
+        <p class="mt-4 text-xs text-muted">
           * La cotización previa es orientativa; el valor final de toma se ratifica tras la inspección física del equipo y su funcionamiento.
         </p>
 
       </div>
     </section>
 
-    <!-- ============ D. CATÁLOGO INTERACTIVO (APPLE STORE SHOWROOM) ============ -->
-    <section id="catalogo" class="py-24 sm:py-32 bg-radial-subtle" aria-labelledby="catalogo-title">
-      <div class="mx-auto max-w-7xl px-6 sm:px-8">
-        
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div>
-            <div class="eyebrow-badge">Catálogo Oficial</div>
-            <h2 id="catalogo-title" class="section-headline mt-4">Elegí tu próximo iPhone.</h2>
-            <p class="mt-3 text-base text-neutral-300">Equipos nuevos sellados de fábrica y seminuevos seleccionados rigurosamente.</p>
-          </div>
-
-          <!-- Selector de Pestañas WAI-ARIA -->
-          <div role="tablist" aria-label="Categorías de catálogo" class="inline-flex rounded-full border border-white/10 bg-surface/80 p-1.5 backdrop-blur-xl">
-            <button type="button" role="tab" id="tab-sellados" aria-controls="panel-sellados" aria-selected="true" tabindex="0"
-              class="rounded-full px-6 py-2.5 text-xs sm:text-sm font-extrabold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold aria-selected:bg-gradient-to-r aria-selected:from-gold aria-selected:to-gold-dark aria-selected:text-obsidian text-neutral-400 hover:text-white">
-              Nuevos Sellados
-            </button>
-            <button type="button" role="tab" id="tab-seminuevos" aria-controls="panel-seminuevos" aria-selected="false" tabindex="-1"
-              class="rounded-full px-6 py-2.5 text-xs sm:text-sm font-extrabold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold aria-selected:bg-gradient-to-r aria-selected:from-gold aria-selected:to-gold-dark aria-selected:text-obsidian text-neutral-400 hover:text-white">
-              Seminuevos Seleccionados
-            </button>
-          </div>
-        </div>
-
-        <!-- Paneles de Catálogo -->
-        <div id="panel-sellados" role="tabpanel" aria-labelledby="tab-sellados" tabindex="0" class="mt-12 focus-visible:outline-none">
-          <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-catalog="sellados"></ul>
-        </div>
-
-        <div id="panel-seminuevos" role="tabpanel" aria-labelledby="tab-seminuevos" tabindex="0" class="mt-12 focus-visible:outline-none" hidden>
-          <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-catalog="seminuevos"></ul>
-        </div>
-
-        <!-- Nota Obligatoria del Manual y Prompt -->
-        <div class="mt-14 rounded-2xl border border-white/10 bg-surface/40 p-6 backdrop-blur-md">
-          <div class="flex items-start gap-4">
-            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold font-bold">i</span>
-            <div class="space-y-1">
-              <p class="text-sm font-bold text-white">Trabajamos principalmente por pedido y stock rotativo.</p>
-              <p class="text-xs leading-relaxed text-neutral-400">
-                Consultá disponibilidad inmediata, colores y capacidades exactas al instante. Precios orientativos de referencia en dólares. Cantidad y monto de cuotas, total financiado y costo financiero total se informan en cada cotización según el medio de pago elegido.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
     <!-- ============ E. TRANSPARENCIA & GARANTÍA (APPLE CARE TIER) ============ -->
-    <section id="garantia" class="border-y border-white/[0.08] bg-darkest py-24 sm:py-32" aria-labelledby="garantia-title">
+    <section id="garantia" class="border-y border-line bg-ivory py-16 sm:py-24" aria-labelledby="garantia-title">
       <div class="mx-auto max-w-7xl px-6 sm:px-8">
         
         <div>
           <div class="eyebrow-badge">Control de Calidad</div>
-          <h2 id="garantia-title" class="section-headline mt-4">Transparencia absoluta. <br><span class="text-neutral-400">Sabés exactamente lo que comprás.</span></h2>
-          <p class="mt-4 max-w-2xl text-base text-neutral-300">Cada unidad es diagnosticada de manera exhaustiva antes de ser ofrecida. Sin reprogramaciones ocultas ni sorpresas.</p>
+          <h2 id="garantia-title" class="section-headline mt-4">Transparencia absoluta. <br><span class="text-muted">Sabés exactamente lo que comprás.</span></h2>
+          <p class="mt-4 max-w-2xl text-base text-muted">Cada unidad es diagnosticada de manera exhaustiva antes de ser ofrecida. Sin reprogramaciones ocultas ni sorpresas.</p>
         </div>
 
         <div class="mt-14 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <!-- Grilla de 6 Puntos de Revisión Técnica -->
           <ul class="grid gap-4 sm:grid-cols-2" aria-label="Protocolo de revisión">
             <li class="glass-card p-6">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold">01</div>
-              <h3 class="mt-4 text-base font-bold text-white">Pantalla & True Tone</h3>
-              <p class="mt-2 text-xs leading-relaxed text-neutral-400">Táctil en cada esquina, calibración de color original y True Tone activo.</p>
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold">01</div>
+              <h3 class="mt-4 text-base font-bold text-ink">Pantalla & True Tone</h3>
+              <p class="mt-2 text-xs leading-relaxed text-muted">Táctil en cada esquina, calibración de color original y True Tone activo.</p>
             </li>
 
             <li class="glass-card p-6">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold">02</div>
-              <h3 class="mt-4 text-base font-bold text-white">Biometría Face ID / Touch ID</h3>
-              <p class="mt-2 text-xs leading-relaxed text-neutral-400">Sensores infrarrojos y lectores biométricos testeados al 100%.</p>
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold">02</div>
+              <h3 class="mt-4 text-base font-bold text-ink">Biometría Face ID / Touch ID</h3>
+              <p class="mt-2 text-xs leading-relaxed text-muted">Sensores infrarrojos y lectores biométricos testeados al 100%.</p>
             </li>
 
             <li class="glass-card p-6">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold">03</div>
-              <h3 class="mt-4 text-base font-bold text-white">Cámaras & Micrófonos</h3>
-              <p class="mt-2 text-xs leading-relaxed text-neutral-400">Estabilización óptica, zoom de lentes, micrófonos de ambiente y parlantes estéreo.</p>
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold">03</div>
+              <h3 class="mt-4 text-base font-bold text-ink">Cámaras & Micrófonos</h3>
+              <p class="mt-2 text-xs leading-relaxed text-muted">Estabilización óptica, zoom de lentes, micrófonos de ambiente y parlantes estéreo.</p>
             </li>
 
             <li class="glass-card p-6">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold">04</div>
-              <h3 class="mt-4 text-base font-bold text-white">100% Libre de iCloud</h3>
-              <p class="mt-2 text-xs leading-relaxed text-neutral-400">Sin cuentas vinculadas, libre de operadores y señal 4G/5G verificada.</p>
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold">04</div>
+              <h3 class="mt-4 text-base font-bold text-ink">100% Libre de iCloud</h3>
+              <p class="mt-2 text-xs leading-relaxed text-muted">Sin cuentas vinculadas, libre de operadores y señal 4G/5G verificada.</p>
             </li>
 
             <li class="glass-card p-6">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold">05</div>
-              <h3 class="mt-4 text-base font-bold text-white">Origen Documentado</h3>
-              <p class="mt-2 text-xs leading-relaxed text-neutral-400">Procedencia legítima e IMEI registrado formalmente por cada equipo.</p>
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold">05</div>
+              <h3 class="mt-4 text-base font-bold text-ink">Origen Documentado</h3>
+              <p class="mt-2 text-xs leading-relaxed text-muted">Procedencia legítima e IMEI registrado formalmente por cada equipo.</p>
             </li>
 
             <li class="glass-card p-6">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold">06</div>
-              <h3 class="mt-4 text-base font-bold text-white">Comprobante de Entrega</h3>
-              <p class="mt-2 text-xs leading-relaxed text-neutral-400">Constancia escrita con datos del equipo, número de serie y garantía legal.</p>
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold">06</div>
+              <h3 class="mt-4 text-base font-bold text-ink">Comprobante de Entrega</h3>
+              <p class="mt-2 text-xs leading-relaxed text-muted">Constancia escrita con datos del equipo, número de serie y garantía legal.</p>
             </li>
           </ul>
 
           <!-- Tarjeta de Garantía Escrita -->
-          <aside class="flex flex-col justify-between rounded-3xl border border-gold/40 bg-gradient-to-b from-surface via-obsidian to-surface p-8 shadow-[0_0_40px_rgba(215,170,74,0.12)]">
+          <aside class="flex flex-col justify-between rounded-3xl border border-gold/40 bg-surface p-8 shadow-sm">
             <div>
               <span class="eyebrow-badge">Garantía Escrita</span>
-              <h3 class="mt-4 text-2xl font-extrabold text-white leading-tight">
+              <h3 class="mt-4 text-2xl font-extrabold text-ink leading-tight">
                 Respaldo legal desde el momento de la entrega.
               </h3>
-              <p class="mt-3 text-sm text-neutral-300">
+              <p class="mt-3 text-sm text-muted">
                 Cumplimos estrictamente el régimen de la Ley 24.240 de Defensa del Consumidor.
               </p>
 
               <dl class="mt-8 grid grid-cols-2 gap-4">
-                <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
-                  <dt class="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Seminuevos</dt>
-                  <dd class="mt-2 text-3xl font-extrabold text-gold">3 meses</dd>
-                  <dd class="text-[11px] text-neutral-400 mt-1">Garantía legal mínima</dd>
+                <div class="rounded-2xl border border-line bg-surface p-4 text-center">
+                  <dt class="text-xs font-semibold text-muted uppercase tracking-wider">Seminuevos</dt>
+                  <dd class="mt-2 text-3xl font-extrabold text-accent">3 meses</dd>
+                  <dd class="text-[11px] text-muted mt-1">Garantía legal mínima</dd>
                 </div>
-                <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
-                  <dt class="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Sellados</dt>
-                  <dd class="mt-2 text-3xl font-extrabold text-gold">6 meses</dd>
-                  <dd class="text-[11px] text-neutral-400 mt-1">Garantía legal mínima</dd>
+                <div class="rounded-2xl border border-line bg-surface p-4 text-center">
+                  <dt class="text-xs font-semibold text-muted uppercase tracking-wider">Sellados</dt>
+                  <dd class="mt-2 text-3xl font-extrabold text-accent">6 meses</dd>
+                  <dd class="text-[11px] text-muted mt-1">Garantía legal mínima</dd>
                 </div>
               </dl>
             </div>
 
-            <div class="mt-8 border-t border-white/10 pt-6">
+            <div class="mt-8 border-t border-line pt-6">
               <div class="flex items-center gap-3">
-                <div class="h-10 w-10 rounded-full bg-gold/15 flex items-center justify-center text-gold">
+                <div class="h-10 w-10 rounded-full bg-gold/15 flex items-center justify-center text-accent">
                   <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
                 <div>
-                  <p class="text-sm font-bold text-white">Asesoramiento y soporte posventa</p>
-                  <p class="text-xs text-neutral-400">Te acompañamos con la configuración inicial y resolución de cualquier duda.</p>
+                  <p class="text-sm font-bold text-ink">Asesoramiento y soporte posventa</p>
+                  <p class="text-xs text-muted">Te acompañamos con la configuración inicial y resolución de cualquier duda.</p>
                 </div>
               </div>
             </div>
@@ -471,57 +624,57 @@
     </section>
 
     <!-- ============ F. POLÍTICA DE ENTREGA & SEGURIDAD ============ -->
-    <section id="zona" class="border-t border-white/[0.08] bg-radial-subtle py-24 sm:py-32" aria-labelledby="zona-title">
+    <section id="zona" class="border-t border-line bg-radial-subtle py-16 sm:py-24" aria-labelledby="zona-title">
       <div class="mx-auto max-w-5xl px-6 sm:px-8">
         
         <div class="text-center max-w-3xl mx-auto">
           <div class="eyebrow-badge mx-auto">Logística y Confianza</div>
           <h2 id="zona-title" class="section-headline mt-4">
             Entregas coordinadas <br>
-            <span class="text-neutral-400">en Canning y alrededores.</span>
+            <span class="text-muted">en Canning y alrededores.</span>
           </h2>
-          <p class="mt-4 text-base sm:text-lg text-neutral-300">
+          <p class="mt-4 text-base sm:text-lg text-muted">
             Priorizamos tu seguridad y tranquilidad en cada operación coordinando encuentros en puntos convenientes y seguros.
           </p>
         </div>
 
         <div class="mt-14 grid gap-6 sm:grid-cols-2">
-          <div class="rounded-2xl border border-white/10 bg-surface/50 p-6 sm:p-8 backdrop-blur-xl hover:border-gold/30 transition">
+          <div class="rounded-2xl border border-line bg-surface p-6 sm:p-8 backdrop-blur-xl hover:border-gold/30 transition">
             <div class="flex items-start gap-4">
-              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold text-lg">✓</span>
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold text-lg">✓</span>
               <div>
-                <h3 class="text-base sm:text-lg font-bold text-white">Puntos Comerciales y Seguros</h3>
-                <p class="text-xs sm:text-sm text-neutral-400 mt-1.5 leading-relaxed">Coordinamos la entrega en puntos públicos y comerciales de Canning o zonas acordadas para total tranquilidad.</p>
+                <h3 class="text-base sm:text-lg font-bold text-ink">Puntos Comerciales y Seguros</h3>
+                <p class="text-xs sm:text-sm text-muted mt-1.5 leading-relaxed">Coordinamos la entrega en puntos públicos y comerciales de Canning o zonas acordadas para total tranquilidad.</p>
               </div>
             </div>
           </div>
 
-          <div class="rounded-2xl border border-white/10 bg-surface/50 p-6 sm:p-8 backdrop-blur-xl hover:border-gold/30 transition">
+          <div class="rounded-2xl border border-line bg-surface p-6 sm:p-8 backdrop-blur-xl hover:border-gold/30 transition">
             <div class="flex items-start gap-4">
-              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold text-lg">✓</span>
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold text-lg">✓</span>
               <div>
-                <h3 class="text-base sm:text-lg font-bold text-white">Revisión Conjunta del Teléfono</h3>
-                <p class="text-xs sm:text-sm text-neutral-400 mt-1.5 leading-relaxed">Probamos pantalla, cámara, Face ID y funciones clave juntos antes de que retires el equipo.</p>
+                <h3 class="text-base sm:text-lg font-bold text-ink">Revisión Conjunta del Teléfono</h3>
+                <p class="text-xs sm:text-sm text-muted mt-1.5 leading-relaxed">Probamos pantalla, cámara, Face ID y funciones clave juntos antes de que retires el equipo.</p>
               </div>
             </div>
           </div>
 
-          <div class="rounded-2xl border border-white/10 bg-surface/50 p-6 sm:p-8 backdrop-blur-xl hover:border-gold/30 transition">
+          <div class="rounded-2xl border border-line bg-surface p-6 sm:p-8 backdrop-blur-xl hover:border-gold/30 transition">
             <div class="flex items-start gap-4">
-              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold text-lg">✓</span>
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold text-lg">✓</span>
               <div>
-                <h3 class="text-base sm:text-lg font-bold text-white">Soporte en Migración de Datos</h3>
-                <p class="text-xs sm:text-sm text-neutral-400 mt-1.5 leading-relaxed">Te ayudamos a transferir fotos y contactos de tu equipo anterior de forma transparente, sin tocar tus datos privados.</p>
+                <h3 class="text-base sm:text-lg font-bold text-ink">Soporte en Migración de Datos</h3>
+                <p class="text-xs sm:text-sm text-muted mt-1.5 leading-relaxed">Te ayudamos a transferir fotos y contactos de tu equipo anterior de forma transparente, sin tocar tus datos privados.</p>
               </div>
             </div>
           </div>
 
-          <div class="rounded-2xl border border-white/10 bg-surface/50 p-6 sm:p-8 backdrop-blur-xl hover:border-gold/30 transition">
+          <div class="rounded-2xl border border-line bg-surface p-6 sm:p-8 backdrop-blur-xl hover:border-gold/30 transition">
             <div class="flex items-start gap-4">
-              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-gold font-bold text-lg">✓</span>
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-accent font-bold text-lg">✓</span>
               <div>
-                <h3 class="text-base sm:text-lg font-bold text-white">Transacción Transparente</h3>
-                <p class="text-xs sm:text-sm text-neutral-400 mt-1.5 leading-relaxed">Aceptamos efectivo USD/ARS o transferencias con verificación al instante de la acreditación.</p>
+                <h3 class="text-base sm:text-lg font-bold text-ink">Transacción Transparente</h3>
+                <p class="text-xs sm:text-sm text-muted mt-1.5 leading-relaxed">Aceptamos efectivo USD/ARS o transferencias con verificación al instante de la acreditación.</p>
               </div>
             </div>
           </div>
@@ -531,27 +684,27 @@
     </section>
 
     <!-- ============ G. PREGUNTAS FRECUENTES ============ -->
-    <section id="faq" class="border-t border-white/[0.08] bg-darkest py-24 sm:py-32" aria-labelledby="faq-title">
+    <section id="faq" class="border-t border-line bg-ivory py-16 sm:py-24" aria-labelledby="faq-title">
       <div class="mx-auto max-w-4xl px-6 sm:px-8">
         
         <div class="text-center">
           <div class="eyebrow-badge mx-auto">Preguntas Frecuentes</div>
           <h2 id="faq-title" class="section-headline mt-4">Todo lo que necesitás saber.</h2>
-          <p class="mt-3 text-base text-neutral-300">Respuestas claras y directas antes de realizar tu compra.</p>
+          <p class="mt-3 text-base text-muted">Respuestas claras y directas antes de realizar tu compra.</p>
         </div>
 
-        <div class="mt-14 divide-y divide-white/10 border-y border-white/10" data-accordion>
+        <div class="mt-14 divide-y divide-line border-y border-line" data-accordion>
           <!-- FAQ 1 -->
           <div>
             <h3>
-              <button type="button" id="faq-btn-1" aria-expanded="false" aria-controls="faq-1" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-white hover:text-gold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+              <button type="button" id="faq-btn-1" aria-expanded="false" aria-controls="faq-1" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-ink hover:text-accent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
                 ¿Cómo funciona la compra por pedido?
-                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-lg font-normal text-gold">+</span>
+                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-lg font-normal text-accent">+</span>
               </button>
             </h3>
             <div id="faq-1" role="region" aria-labelledby="faq-btn-1" class="acc-panel">
               <div>
-                <p class="pb-6 text-sm sm:text-base leading-relaxed text-neutral-400">
+                <p class="pb-6 text-sm sm:text-base leading-relaxed text-muted">
                   Nos indicás el modelo exacto, capacidad y color que buscás. Confirmamos disponibilidad con nuestros proveedores y congelamos el valor con una seña de reserva. Te informamos el plazo de entrega estimado y cuando llega coordinamos la entrega en mano.
                 </p>
               </div>
@@ -561,14 +714,14 @@
           <!-- FAQ 2 -->
           <div>
             <h3>
-              <button type="button" id="faq-btn-2" aria-expanded="false" aria-controls="faq-2" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-white hover:text-gold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+              <button type="button" id="faq-btn-2" aria-expanded="false" aria-controls="faq-2" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-ink hover:text-accent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
                 ¿Qué medios de pago aceptan?
-                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-lg font-normal text-gold">+</span>
+                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-lg font-normal text-accent">+</span>
               </button>
             </h3>
             <div id="faq-2" role="region" aria-labelledby="faq-btn-2" class="acc-panel">
               <div>
-                <p class="pb-6 text-sm sm:text-base leading-relaxed text-neutral-400">
+                <p class="pb-6 text-sm sm:text-base leading-relaxed text-muted">
                   Aceptamos efectivo en dólares (billetes en buen estado), pesos argentinos y transferencias bancarias. También disponemos de planes de financiación en hasta 4 cuotas, informando en cada cotización el monto de la cuota, el total financiado y las condiciones.
                 </p>
               </div>
@@ -578,14 +731,14 @@
           <!-- FAQ 3 -->
           <div>
             <h3>
-              <button type="button" id="faq-btn-3" aria-expanded="false" aria-controls="faq-3" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-white hover:text-gold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+              <button type="button" id="faq-btn-3" aria-expanded="false" aria-controls="faq-3" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-ink hover:text-accent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
                 ¿Qué garantía tienen los equipos seminuevos?
-                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-lg font-normal text-gold">+</span>
+                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-lg font-normal text-accent">+</span>
               </button>
             </h3>
             <div id="faq-3" role="region" aria-labelledby="faq-btn-3" class="acc-panel">
               <div>
-                <p class="pb-6 text-sm sm:text-base leading-relaxed text-neutral-400">
+                <p class="pb-6 text-sm sm:text-base leading-relaxed text-muted">
                   Todos los seminuevos cuentan con un mínimo legal de 3 meses de garantía escrita a partir del día de la entrega (y 6 meses para sellados de fábrica), respaldados por la Ley 24.240. Si el equipo presenta alguna falla técnica, te damos soporte directo con diagnóstico y resolución.
                 </p>
               </div>
@@ -595,14 +748,14 @@
           <!-- FAQ 4 -->
           <div>
             <h3>
-              <button type="button" id="faq-btn-4" aria-expanded="false" aria-controls="faq-4" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-white hover:text-gold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+              <button type="button" id="faq-btn-4" aria-expanded="false" aria-controls="faq-4" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-ink hover:text-accent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
                 ¿Cómo sé el estado real de la batería?
-                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-lg font-normal text-gold">+</span>
+                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-lg font-normal text-accent">+</span>
               </button>
             </h3>
             <div id="faq-4" role="region" aria-labelledby="faq-btn-4" class="acc-panel">
               <div>
-                <p class="pb-6 text-sm sm:text-base leading-relaxed text-neutral-400">
+                <p class="pb-6 text-sm sm:text-base leading-relaxed text-muted">
                   Priorizamos la transparencia. Informamos la condición y porcentaje de batería de cada unidad antes de que tomes una decisión. Si algún equipo tuvo cambio de batería o piezas, te lo aclaramos explícitamente en la descripción técnica.
                 </p>
               </div>
@@ -612,14 +765,14 @@
           <!-- FAQ 5 -->
           <div>
             <h3>
-              <button type="button" id="faq-btn-5" aria-expanded="false" aria-controls="faq-5" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-white hover:text-gold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+              <button type="button" id="faq-btn-5" aria-expanded="false" aria-controls="faq-5" class="flex w-full items-center justify-between gap-4 py-6 text-left text-base sm:text-lg font-bold text-ink hover:text-accent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
                 ¿Dónde y cómo se realizan las entregas?
-                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-lg font-normal text-gold">+</span>
+                <span aria-hidden="true" class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-lg font-normal text-accent">+</span>
               </button>
             </h3>
             <div id="faq-5" role="region" aria-labelledby="faq-btn-5" class="acc-panel">
               <div>
-                <p class="pb-6 text-sm sm:text-base leading-relaxed text-neutral-400">
+                <p class="pb-6 text-sm sm:text-base leading-relaxed text-muted">
                   En puntos comerciales y seguros acordados en Canning y alrededores. Nos tomamos el tiempo para que prendas el teléfono, lo inspecciones con tranquilidad y verifiques que todo coincide con lo pactado.
                 </p>
               </div>
@@ -627,10 +780,10 @@
           </div>
         </div>
 
-        <div class="mt-12 flex flex-col items-center justify-between gap-4 rounded-3xl border border-white/10 bg-surface/60 p-8 text-center sm:flex-row sm:text-left">
+        <div class="mt-12 flex flex-col items-center justify-between gap-4 rounded-3xl border border-line bg-surface p-8 text-center sm:flex-row sm:text-left">
           <div>
-            <h3 class="text-base font-bold text-white">¿Tenés alguna consulta puntual?</h3>
-            <p class="text-xs sm:text-sm text-neutral-400 mt-1">Escribinos y te asesoramos al instante por WhatsApp.</p>
+            <h3 class="text-base font-bold text-ink">¿Tenés alguna consulta puntual?</h3>
+            <p class="text-xs sm:text-sm text-muted mt-1">Escribinos y te asesoramos al instante por WhatsApp.</p>
           </div>
           <a data-wa="general" href="#" class="btn-gold shrink-0">Hablar por WhatsApp</a>
         </div>
@@ -640,67 +793,67 @@
   </main>
 
   <!-- ============ H. FOOTER INSTITUCIONAL ============ -->
-  <footer class="border-t border-white/[0.08] bg-darkest py-16 text-neutral-400">
+  <footer class="theme-dark border-t border-line py-16 text-muted">
     <div class="mx-auto max-w-7xl px-6 sm:px-8">
       
       <div class="grid gap-12 md:grid-cols-4">
         <!-- Columna Marca -->
         <div class="md:col-span-2">
-          <div class="flex items-center gap-3.5">
-            <img src="Logo.jpg" alt="Golden Touch" class="h-12 w-12 rounded-full object-cover ring-2 ring-gold/40">
+          <div class="brand-lockup brand-lockup--footer">
+            <span class="brand-symbol" aria-hidden="true"><img src="Logo.jpg" alt="" width="738" height="738" loading="lazy"></span>
             <div>
-              <span class="text-lg font-extrabold tracking-[0.16em] text-white">GOLDEN TOUCH</span>
-              <p class="text-xs text-gold font-bold tracking-widest uppercase">Apple & Plan Canje</p>
+              <span class="brand-name"><span>GOLDEN</span><span>TOUCH</span></span>
+              <span class="brand-caption">Apple & Plan Canje</span>
             </div>
           </div>
-          <p class="mt-4 max-w-sm text-sm leading-relaxed text-neutral-400">
+          <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted">
             Comercialización de iPhones sellados de fábrica y seminuevos seleccionados. Plan Canje transparente, diagnóstico exhaustivo y atención personalizada en Canning y alrededores.
           </p>
         </div>
 
         <!-- Columna Contacto -->
         <div>
-          <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-gold">Contacto Oficial</h2>
+          <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-accent">Contacto Oficial</h2>
           <ul class="mt-4 space-y-3 text-sm">
             <li>
-              <span class="block text-xs text-neutral-500 uppercase font-semibold">Horarios</span>
-              <span class="text-white font-medium" data-config="HORARIOS">Lunes a sábado · 10 a 20 h</span>
+              <span class="block text-xs text-muted uppercase font-semibold">Horarios</span>
+              <span class="text-ink font-medium" data-config="HORARIOS">Lunes a sábado · 10 a 20 h</span>
             </li>
             <li>
-              <span class="block text-xs text-neutral-500 uppercase font-semibold">WhatsApp Comercial</span>
-              <a data-wa="general" href="#" class="text-gold hover:underline font-bold">+54 9 11 2559-1488</a>
+              <span class="block text-xs text-muted uppercase font-semibold">WhatsApp Comercial</span>
+              <a data-wa="general" href="#" class="text-accent hover:underline font-bold">+54 9 11 2559-1488</a>
             </li>
             <li>
-              <span class="block text-xs text-neutral-500 uppercase font-semibold">Instagram</span>
-              <a data-instagram href="#" class="text-white hover:text-gold transition font-medium">@goldentouch.ar</a>
+              <span class="block text-xs text-muted uppercase font-semibold">Instagram</span>
+              <a data-instagram href="#" class="text-ink hover:text-accent transition font-medium">@goldentouch.ar</a>
             </li>
           </ul>
         </div>
 
         <!-- Columna Navegación -->
         <div>
-          <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-gold">Navegación</h2>
+          <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-accent">Navegación</h2>
           <ul class="mt-4 space-y-2.5 text-sm">
-            <li><a href="#plan-canje" class="hover:text-white transition">Plan Canje</a></li>
-            <li><a href="#catalogo" class="hover:text-white transition">Catálogo de Equipos</a></li>
-            <li><a href="#garantia" class="hover:text-white transition">Garantía y Calidad</a></li>
-            <li><a href="#zona" class="hover:text-white transition">Zona de Entrega</a></li>
-            <li><a href="#faq" class="hover:text-white transition">Preguntas Frecuentes</a></li>
+            <li><a href="#catalogo" class="hover:text-ink transition">Catálogo de Equipos</a></li>
+            <li><a href="#plan-canje" class="hover:text-ink transition">Plan Canje</a></li>
+            <li><a href="#garantia" class="hover:text-ink transition">Garantía y Calidad</a></li>
+            <li><a href="#zona" class="hover:text-ink transition">Zona de Entrega</a></li>
+            <li><a href="#faq" class="hover:text-ink transition">Preguntas Frecuentes</a></li>
           </ul>
         </div>
       </div>
 
       <!-- Disclaimer Legal -->
-      <div class="mt-14 border-t border-white/[0.08] pt-8 text-xs leading-relaxed text-neutral-500 space-y-3">
+      <div class="mt-14 border-t border-line pt-8 text-xs leading-relaxed text-muted space-y-3">
         <p>
           Las imágenes de productos se exhiben con fines ilustrativos y comparativos. Precios de referencia en dólares estadounidenses o pesos según cotización aplicable del día. Cantidad y monto de cuotas, precio total financiado y costo financiero total se informan al momento de cotizar.
         </p>
         <p>
-          Garantía legal otorgada de conformidad con los términos de la Ley 24.240 de Defensa del Consumidor de la República Argentina. Conocé tus derechos en el portal oficial de <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor" target="_blank" rel="noopener noreferrer" class="text-neutral-400 underline hover:text-gold">Defensa del Consumidor</a>.
+          Garantía legal otorgada de conformidad con los términos de la Ley 24.240 de Defensa del Consumidor de la República Argentina. Conocé tus derechos en el portal oficial de <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor" target="_blank" rel="noopener noreferrer" class="text-muted underline hover:text-accent">Defensa del Consumidor</a>.
         </p>
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/[0.05]">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-line">
           <p>© <span id="year">2026</span> Golden Touch. Todos los derechos reservados.</p>
-          <p class="text-[11px] text-neutral-600">Apple, iPhone, Face ID y Super Retina son marcas registradas de Apple Inc. Golden Touch opera como comercializador independiente.</p>
+          <p class="text-[11px] text-muted">Apple, iPhone, Face ID y Super Retina son marcas registradas de Apple Inc. Golden Touch opera como comercializador independiente.</p>
         </div>
       </div>
 
@@ -708,6 +861,7 @@
   </footer>
 
   <!-- ============ JAVASCRIPT DINÁMICO ============ -->
+  <script src="assets/catalogo.js"></script>
   <script>
     (() => {
       'use strict';
@@ -725,135 +879,8 @@
         modelo: (model, tipo, color) => `Hola Golden Touch! Quiero consultar por el ${model} (${tipo})${color ? ' en color ' + color : ''}. ¿Qué disponibilidad y cotización tienen?`
       };
 
-      /* Catálogo de Equipos con Render Oficial, Acabados Reales y Precios Orientativos */
-      const CATALOG = {
-        sellados: [
-          {
-            model: 'iPhone 16 Pro Max',
-            conditionBadge: 'Nuevo Sellado',
-            image: 'assets/16-pro.png',
-            conditionDesc: 'Sellado de fábrica en caja · Garantía escrita',
-            priceRef: 'Desde USD 1.350',
-            installmentRef: 'o en hasta 4 cuotas fijadas',
-            storage: ['256 GB', '512 GB', '1 TB'],
-            colors: [
-              { name: 'Titanio Desierto', hex: '#C4A587' },
-              { name: 'Titanio Natural', hex: '#9E968D' },
-              { name: 'Titanio Blanco', hex: '#E3E4E5' },
-              { name: 'Titanio Negro', hex: '#3C3B37' }
-            ]
-          },
-          {
-            model: 'iPhone 16',
-            conditionBadge: 'Nuevo Sellado',
-            image: 'assets/16.png',
-            conditionDesc: 'Sellado de fábrica en caja · Garantía escrita',
-            priceRef: 'Desde USD 950',
-            installmentRef: 'o en hasta 4 cuotas fijadas',
-            storage: ['128 GB', '256 GB', '512 GB'],
-            colors: [
-              { name: 'Ultramarino', hex: '#435C9A' },
-              { name: 'Verde Azulado', hex: '#729B96' },
-              { name: 'Rosa', hex: '#E39DA7' },
-              { name: 'Blanco', hex: '#FFFFFF' },
-              { name: 'Negro', hex: '#2A2B2D' }
-            ]
-          },
-          {
-            model: 'iPhone 15',
-            conditionBadge: 'Nuevo Sellado',
-            image: 'assets/15.png',
-            conditionDesc: 'Sellado de fábrica en caja · Garantía escrita',
-            priceRef: 'Desde USD 820',
-            installmentRef: 'o en hasta 4 cuotas fijadas',
-            storage: ['128 GB', '256 GB', '512 GB'],
-            colors: [
-              { name: 'Rosa', hex: '#F0D4DA' },
-              { name: 'Amarillo', hex: '#F0E8C5' },
-              { name: 'Verde', hex: '#D7E5D5' },
-              { name: 'Azul', hex: '#D1DEE8' },
-              { name: 'Negro', hex: '#383A3C' }
-            ]
-          }
-        ],
-        seminuevos: [
-          {
-            model: 'iPhone 16 Pro Max',
-            conditionBadge: 'Seminuevo Seleccionado',
-            image: 'assets/16-pro.png',
-            conditionDesc: 'Batería y hardware testeados · Impecable',
-            priceRef: 'Desde USD 1.180',
-            installmentRef: 'o en hasta 4 cuotas fijadas',
-            storage: ['256 GB', '512 GB'],
-            colors: [
-              { name: 'Titanio Desierto', hex: '#C4A587' },
-              { name: 'Titanio Natural', hex: '#9E968D' },
-              { name: 'Titanio Blanco', hex: '#E3E4E5' },
-              { name: 'Titanio Negro', hex: '#3C3B37' }
-            ]
-          },
-          {
-            model: 'iPhone 15 Pro',
-            conditionBadge: 'Seminuevo Seleccionado',
-            image: 'assets/15-pro.png',
-            conditionDesc: 'Batería y hardware testeados · Impecable',
-            priceRef: 'Desde USD 890',
-            installmentRef: 'o en hasta 4 cuotas fijadas',
-            storage: ['128 GB', '256 GB', '512 GB'],
-            colors: [
-              { name: 'Titanio Natural', hex: '#9E968D' },
-              { name: 'Titanio Azul', hex: '#3C4959' },
-              { name: 'Titanio Blanco', hex: '#E3E4E5' },
-              { name: 'Titanio Negro', hex: '#3C3B37' }
-            ]
-          },
-          {
-            model: 'iPhone 15',
-            conditionBadge: 'Seminuevo Seleccionado',
-            image: 'assets/15.png',
-            conditionDesc: 'Batería y hardware testeados · Impecable',
-            priceRef: 'Desde USD 680',
-            installmentRef: 'o en hasta 4 cuotas fijadas',
-            storage: ['128 GB', '256 GB'],
-            colors: [
-              { name: 'Rosa', hex: '#F0D4DA' },
-              { name: 'Negro', hex: '#383A3C' },
-              { name: 'Azul', hex: '#D1DEE8' }
-            ]
-          },
-          {
-            model: 'iPhone 14',
-            conditionBadge: 'Seminuevo Seleccionado',
-            image: 'assets/14.png',
-            conditionDesc: 'Batería y hardware testeados · Impecable',
-            priceRef: 'Desde USD 560',
-            installmentRef: 'o en hasta 4 cuotas fijadas',
-            storage: ['128 GB', '256 GB'],
-            colors: [
-              { name: 'Medianoche', hex: '#21262D' },
-              { name: 'Blanco Estelar', hex: '#F9F6EF' },
-              { name: 'Azul', hex: '#A1B9CF' },
-              { name: 'Púrpura', hex: '#E4DFEC' }
-            ]
-          },
-          {
-            model: 'iPhone 13',
-            conditionBadge: 'Seminuevo Seleccionado',
-            image: 'assets/13.png',
-            conditionDesc: 'Batería y hardware testeados · Impecable',
-            priceRef: 'Desde USD 450',
-            installmentRef: 'o en hasta 4 cuotas fijadas',
-            storage: ['128 GB', '256 GB'],
-            colors: [
-              { name: 'Verde', hex: '#3A4E3F' },
-              { name: 'Rosa', hex: '#FAD8D6' },
-              { name: 'Azul', hex: '#275878' },
-              { name: 'Medianoche', hex: '#1C242C' },
-              { name: 'Blanco Estelar', hex: '#F9F6EF' }
-            ]
-          }
-        ]
-      };
+      /* Archivo público: solo precios de venta y características. */
+      const CATALOG = window.GOLDEN_TOUCH_CATALOG?.groups || {};
 
       const waUrl = (text) => `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
@@ -881,96 +908,220 @@
         return node;
       };
 
-      /* Renderizado de Tarjetas de Catálogo (Apple Store Tier) */
-      const renderCatalogCard = (item, type) => {
+      /* Cada opción conserva su capacidad, batería, color y precio. */
+      const money = (amount) => typeof amount === 'number' && Number.isFinite(amount) ? `USD ${amount.toLocaleString('es-AR')}` : 'Precio a consultar';
+      const stockText = { disponible: 'Disponible por pedido', agotado: 'Agotado', a_confirmar: 'A confirmar', no_listado: 'Sin disponibilidad confirmada' };
+      const stockOf = option => option?.availability?.status || 'a_confirmar';
+      const specText = specs => Object.entries(specs || {}).map(([key,value]) => ({ ram: `${value} RAM`, cpu: `${value} CPU`, gpu: `${value} GPU` }[key] || value)).join(' · ');
+      let cardCount = 0;
+      const renderCatalogCard = (item) => {
         const li = createEl('li');
-        const card = createEl('article', 'glass-card group flex h-full flex-col p-6 sm:p-7 relative overflow-hidden');
-
-        // Badge superior de categoría
-        const badgeWrap = createEl('div', 'flex items-center justify-between gap-2');
-        const badge = createEl('span', type === 'sellados'
-          ? 'inline-flex items-center rounded-full bg-gold/15 border border-gold/40 px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-gold'
-          : 'inline-flex items-center rounded-full bg-white/10 border border-white/20 px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-silver',
-          item.conditionBadge
-        );
-        badgeWrap.appendChild(badge);
-        card.appendChild(badgeWrap);
-
-        // Render Oficial Apple
-        const figure = createEl('figure', 'relative my-6 flex h-48 sm:h-56 items-center justify-center');
-        const glow = createEl('div', 'pointer-events-none absolute h-36 w-36 rounded-full bg-gold/10 blur-2xl transition duration-500 group-hover:bg-gold/20');
-        const img = createEl('img', 'relative z-10 max-h-full w-auto object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.7)] transition-all duration-500 group-hover:scale-105');
-        img.src = item.image;
-        img.alt = `${item.model} oficial`;
-        img.loading = 'lazy';
-        figure.append(glow, img);
-        card.appendChild(figure);
-
-        // Paleta de Colores (Swatches)
-        const swatchWrap = createEl('div', 'flex items-center justify-center gap-2 mb-4');
-        swatchWrap.setAttribute('aria-label', 'Colores disponibles');
-        let selectedColor = item.colors[0]?.name || '';
-        item.colors.forEach((col, idx) => {
-          const swatch = createEl('button', 'h-4 w-4 rounded-full border border-white/25 shadow-sm transition-transform duration-200 hover:scale-125 focus:outline-none focus:ring-1 focus:ring-gold');
-          swatch.style.backgroundColor = col.hex;
-          swatch.title = col.name;
-          swatch.type = 'button';
-          swatch.setAttribute('aria-label', `Color ${col.name}`);
-          if (idx === 0) swatch.classList.add('ring-2', 'ring-gold');
-          swatch.addEventListener('click', (e) => {
-            e.preventDefault();
-            swatchWrap.querySelectorAll('button').forEach(b => b.classList.remove('ring-2', 'ring-gold'));
-            swatch.classList.add('ring-2', 'ring-gold');
-            selectedColor = col.name;
-            // Actualizar CTA
-            const ctaBtn = card.querySelector('.btn-card');
-            if (ctaBtn) {
-              setExtLink(ctaBtn, waUrl(MESSAGES.modelo(item.model, item.conditionBadge, selectedColor)));
-            }
+        li.dataset.search = item.model.toLocaleLowerCase('es');
+        const card = createEl('article', 'glass-card flex h-full flex-col p-6 sm:p-7 overflow-hidden');
+        card.appendChild(createEl('span', 'self-start rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-bold text-accent', item.conditionBadge));
+        const figure = createEl('figure', 'my-6');
+        const frame = createEl('div', 'flex h-56 items-center justify-center rounded-2xl bg-white overflow-hidden');
+        const img = createEl('img', 'h-full max-w-full object-contain p-3');
+        img.loading = 'lazy'; img.decoding = 'async';
+        const fallback = createEl('p', 'px-5 text-center text-sm text-muted', 'Imagen pendiente. Consultanos por una foto de este equipo.');
+        fallback.hidden = true;
+        img.addEventListener('error', () => { img.hidden = true; fallback.hidden = false; });
+        img.addEventListener('load', () => { img.hidden = false; img.style.opacity = '1'; fallback.hidden = true; });
+        const caption = createEl('figcaption', 'mt-2 text-center text-xs text-muted');
+        frame.append(img, fallback); figure.append(frame, caption);
+        card.append(figure, createEl('h3', 'text-xl font-extrabold tracking-tight text-ink', item.model));
+        const selectId = `opcion-equipo-${++cardCount}`;
+        const label = createEl('label', 'mt-4 block text-sm font-semibold text-ink', 'Elegí tu opción');
+        label.htmlFor = selectId;
+        const select = createEl('select', 'mt-2 w-full min-w-0 rounded-xl border border-line bg-surface p-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent');
+        select.id = selectId;
+        item.variants.forEach((v, index) => {
+          const details = [v.storage, specText(v.specs)];
+          if (v.battery) details.push(`Batería ${v.battery}`);
+          if (v.sim) details.push('Con chip');
+          if (!v.colors.length) details.push('Color a consultar');
+          details.push(`${v.colors.length > 1 && v.priceUSD !== null ? 'Desde ' : ''}${money(v.priceUSD)}`);
+          const option = createEl('option', '', details.filter(Boolean).join(' · '));
+          option.value = String(index); select.appendChild(option);
+        });
+        const summary = createEl('p', 'mt-3 text-sm leading-relaxed text-muted');
+        const colorLabel = createEl('p', 'mt-4 text-sm font-semibold text-ink');
+        const swatches = createEl('div', 'mt-3 flex flex-wrap items-start gap-4');
+        swatches.setAttribute('role', 'group');
+        swatches.setAttribute('aria-label', `Ver colores de ${item.model}`);
+        const colorHint = createEl('p', 'mt-3 text-xs leading-relaxed text-muted');
+        const priceSection = createEl('div', 'mt-6 border-t border-line pt-4');
+        const price = createEl('p', 'text-2xl font-extrabold tracking-tight text-ink');
+        price.setAttribute('aria-live', 'polite');
+        const stockNotice = createEl('p', 'mt-2 text-sm font-semibold text-ink');
+        stockNotice.setAttribute('aria-live', 'polite');
+        const priceNote = createEl('p', 'mt-1 text-xs leading-relaxed text-muted');
+        priceSection.append(price, stockNotice, priceNote);
+        const cta = createEl('a', 'btn-card mt-5', 'Consultar por este equipo');
+        const stockCta = createEl('a', 'mt-3 block rounded-lg py-2 text-center text-sm font-semibold text-accent underline underline-offset-4', 'Consultar stock de esta opción');
+        card.append(label, select, summary, colorLabel, swatches, colorHint, priceSection, cta, stockCta);
+        const selectedVariant = () => item.variants[Number(select.value)];
+        let visibleColors = [];
+        const disableLink = (link, disabled) => {
+          if (disabled) { link.removeAttribute('href'); link.setAttribute('aria-disabled', 'true'); link.tabIndex = -1; }
+          else { link.removeAttribute('aria-disabled'); link.removeAttribute('tabindex'); }
+        };
+        const chooseColor = name => {
+          const v = selectedVariant();
+          const visual = visibleColors.find(c => c.name === name);
+          const offer = name && v.colors.length ? v.colors.find(c => c.name === name) : v;
+          const state = offer ? stockOf(offer) : 'no_listado';
+          const soldOut = state === 'agotado';
+          const canConsult = Boolean(offer) && !soldOut;
+          const confirmedAt = offer?.availability?.confirmedAt;
+          colorLabel.textContent = name ? `${v.colors.length ? 'Color' : 'Color preferido'}: ${name}` : 'Elegí un color';
+          stockNotice.textContent = (state === 'a_confirmar' ? 'Stock a confirmar' : stockText[state]) + (confirmedAt ? ` · Informado el ${confirmedAt.split('-').reverse().join('/')}` : '');
+          price.textContent = offer ? money(offer.priceUSD ?? v.priceUSD) : 'Consultar otras opciones';
+          priceNote.textContent = soldOut ? 'Último precio de referencia. Podés ver este color, pero está agotado.' : !offer ? 'Podés ver este color. No tenemos una oferta confirmada para esta configuración.' : item.pricePending ? 'Consultanos el precio y la disponibilidad de esta configuración.' : 'Precio de referencia de contado en USD. Confirmamos disponibilidad al coordinar tu pedido.';
+          const photo = name ? visual?.image : item.image;
+          img.hidden = !photo; fallback.hidden = Boolean(photo);
+          if (photo) {
+            img.style.opacity = img.getAttribute('src') === photo && img.complete && img.naturalWidth > 0 ? '1' : '0';
+            img.src = photo;
+            img.alt = `${item.model}${name ? ` en color ${name}` : ''}, imagen ilustrativa`;
+          } else img.removeAttribute('src');
+          caption.textContent = name ? `Imagen ilustrativa · ${name}` : 'Imagen ilustrativa';
+          if (item.imageNote) caption.textContent = `${name ? name + ' · ' : ''}${item.imageNote}`;
+          swatches.querySelectorAll('button').forEach(button => {
+            const active = button.dataset.color === name;
+            button.setAttribute('aria-pressed', String(active));
+            button.classList.toggle('ring-2', active); button.classList.toggle('ring-accent', active);
           });
-          swatchWrap.appendChild(swatch);
-        });
-        card.appendChild(swatchWrap);
-
-        // Título del Modelo
-        const title = createEl('h3', 'text-xl sm:text-2xl font-extrabold text-white tracking-tight', item.model);
-        const desc = createEl('p', 'mt-1 text-xs text-neutral-400', item.conditionDesc);
-        card.appendChild(title);
-        card.appendChild(desc);
-
-        // Capacidades
-        const storageList = createEl('ul', 'mt-4 flex flex-wrap gap-1.5');
-        item.storage.forEach((s) => {
-          const chip = createEl('li', 'rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-semibold text-neutral-300', s);
-          storageList.appendChild(chip);
-        });
-        card.appendChild(storageList);
-
-        // Precios Referenciales
-        const priceSection = createEl('div', 'mt-6 border-t border-white/[0.08] pt-4');
-        const priceTag = createEl('p', 'text-xl sm:text-2xl font-black text-white tracking-tight', item.priceRef);
-        const installTag = createEl('p', 'text-xs font-semibold text-gold mt-0.5', item.installmentRef);
-        priceSection.append(priceTag, installTag);
-        card.appendChild(priceSection);
-
-        // Botón CTA de Consulta
-        const ctaWrap = createEl('div', 'mt-5 flex-1 flex flex-col justify-end');
-        const ctaBtn = createEl('a', 'btn-card', 'Consultar este modelo');
-        setExtLink(ctaBtn, waUrl(MESSAGES.modelo(item.model, item.conditionBadge, selectedColor)));
-        ctaBtn.setAttribute('aria-label', `Consultar ${item.model} por WhatsApp`);
-        ctaWrap.appendChild(ctaBtn);
-        card.appendChild(ctaWrap);
-
-        li.appendChild(card);
-        return li;
+          const details = [item.model, item.conditionBadge, v.storage, specText(v.specs)];
+          if (v.battery) details.push(`batería informada: ${v.battery}`);
+          if (v.sim) details.push('con chip');
+          if (name) details.push(v.colors.length ? `color ${name}` : `color preferido ${name}, sujeto a confirmación`);
+          if (canConsult) {
+            const reference = offer.reference || v.reference;
+            const refText = reference ? ` Referencia: ${reference}.` : '';
+            const description = details.filter(Boolean).join(' · ');
+            const selectedPrice = offer.priceUSD ?? v.priceUSD;
+            const quote = typeof selectedPrice === 'number' ? ` Vi el precio de referencia de ${money(selectedPrice)}.` : '';
+            disableLink(cta, false); disableLink(stockCta, false);
+            cta.textContent = 'Consultar por este equipo';
+            setExtLink(cta, waUrl(`Hola Golden Touch! Me interesa ${description}.${quote}${refText} ¿Me confirman precio y cómo comprarlo?`));
+            setExtLink(stockCta, waUrl(`Hola Golden Touch! ¿Me confirman stock y precio de ${description}?${quote}${refText}`));
+          } else {
+            disableLink(cta, true); disableLink(stockCta, true);
+            cta.textContent = soldOut ? 'Color agotado' : 'Color sin disponibilidad confirmada';
+          }
+        };
+        const updateVariant = () => {
+          const v = selectedVariant();
+          summary.textContent = [v.storage, specText(v.specs), v.battery ? `Batería informada: ${v.battery}` : '', v.sim ? 'Con chip' : ''].filter(Boolean).join(' · ');
+          const palette = new Map((item.displayColors || []).map(c => [c.name, c]));
+          v.colors.forEach(c => palette.set(c.name, c));
+          visibleColors = Array.from(palette.values());
+          const hasUnlistedColors = v.colors.length > 0 && visibleColors.some(c => !v.colors.some(offer => offer.name === c.name));
+          colorHint.textContent = !v.colors.length ? 'Colores a confirmar.' : hasUnlistedColors ? 'Los colores tachados no están incluidos en la lista para esta opción. Podés tocarlos para ver la foto.' : '';
+          colorHint.hidden = !colorHint.textContent;
+          swatches.replaceChildren();
+          visibleColors.forEach(color => {
+            const offer = v.colors.length ? v.colors.find(c => c.name === color.name) : v;
+            const state = offer ? stockOf(offer) : 'no_listado';
+            const choice = createEl('div', 'flex max-w-24 flex-col items-center gap-2 text-center');
+            const button = createEl('button', 'color-swatch h-7 w-7 rounded-full border border-line focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent');
+            button.type = 'button'; button.style.backgroundColor = color.hex;
+            button.dataset.color = color.name; button.dataset.status = state;
+            const statusHint = state === 'agotado' || state === 'no_listado' ? ` · ${stockText[state]}` : '';
+            button.title = `Ver ${color.name}${statusHint}`;
+            button.setAttribute('aria-label', `Ver ${color.name}${statusHint}`);
+            button.addEventListener('click', () => chooseColor(color.name));
+            const text = createEl('span', 'stock-label', color.name); text.dataset.status = state;
+            choice.append(button, text);
+            swatches.appendChild(choice);
+          });
+          if (!v.colors.length && visibleColors.length) {
+            const resetColor = createEl('button', 'rounded-lg border border-line px-3 py-2 text-xs font-semibold text-ink', 'Consultar colores');
+            resetColor.type = 'button'; resetColor.dataset.color = '';
+            resetColor.addEventListener('click', () => chooseColor(''));
+            swatches.appendChild(resetColor);
+          }
+          chooseColor(v.colors.find(c => stockOf(c) === 'disponible')?.name || v.colors.find(c => stockOf(c) !== 'agotado')?.name || v.colors[0]?.name || '');
+        };
+        select.addEventListener('change', updateVariant);
+        updateVariant(); li.appendChild(card); return li;
       };
 
-      // Inyectar Tarjetas
-      Object.keys(CATALOG).forEach((type) => {
+      Object.entries(CATALOG).forEach(([type, items]) => {
         const list = document.querySelector(`[data-catalog="${type}"]`);
-        if (!list) return;
-        CATALOG[type].forEach((item) => list.appendChild(renderCatalogCard(item, type)));
+        if (list) items.forEach(item => list.appendChild(renderCatalogCard(item)));
       });
+      const dateLabel = document.getElementById('catalog-date');
+      const date = window.GOLDEN_TOUCH_CATALOG?.updatedAt;
+      if (date) dateLabel.textContent = `Lista actualizada el ${date.split('-').reverse().join('/')}`;
+      const search = document.getElementById('catalog-search');
+      search.addEventListener('input', () => {
+        const query = search.value.toLocaleLowerCase('es').trim().replace(/\s+/g, '');
+        document.querySelectorAll('[data-catalog]').forEach(list => {
+          let visible = 0;
+          Array.from(list.children).forEach(card => {
+            card.hidden = !card.dataset.search.replace(/\s+/g, '').includes(query);
+            if (!card.hidden) visible++;
+          });
+          const message = list.parentElement.querySelector('[data-empty]');
+          message.hidden = visible > 0;
+          message.textContent = cardCount ? 'No encontramos ese modelo en esta categoría. Podés buscar en las otras categorías o consultarnos por WhatsApp.' : 'No pudimos cargar el catálogo. Consultanos por WhatsApp.';
+        });
+      });
+      search.dispatchEvent(new Event('input'));
+
+      /* Animaciones breves: el contenido permanece visible si el navegador no las admite. */
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const animateArrival = element => {
+        if (!element || motionPreference.matches || typeof element.animate !== 'function') return;
+        element.getAnimations().forEach(animation => animation.cancel());
+        element.animate([
+          { opacity: .55, transform: 'translateY(12px)' },
+          { opacity: 1, transform: 'translateY(0)' }
+        ], { duration: 380, easing: 'cubic-bezier(.22,1,.36,1)' });
+      };
+      if ('IntersectionObserver' in window && !motionPreference.matches) {
+        const entranceObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateArrival(entry.target);
+              entranceObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .15 });
+        document.querySelectorAll('main .section-headline').forEach(element => entranceObserver.observe(element));
+      }
+      motionPreference.addEventListener?.('change', event => {
+        if (event.matches) document.getAnimations().forEach(animation => animation.cancel());
+      });
+
+      /* Familias: navegación dentro de la misma página. */
+      const familyNames = { watch: 'Apple Watch', mac: 'Mac', ipad: 'iPad', audio: 'AirPods', gaming: 'PlayStation', accesorios: 'Accesorios' };
+      const extraCatalog = window.GOLDEN_TOUCH_CATALOG?.families || {};
+      const familyCards = Object.fromEntries(Object.entries(extraCatalog).map(([family, items]) => [family, items.map(renderCatalogCard)]));
+      const familyButtons = Array.from(document.querySelectorAll('[data-family]'));
+      familyButtons.forEach(button => button.addEventListener('click', () => {
+        const family = button.dataset.family;
+        const isPhone = family === 'iphone';
+        familyButtons.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+        document.getElementById('family-iphone').hidden = !isPhone;
+        document.getElementById('family-inquiry').hidden = isPhone;
+        animateArrival(document.getElementById(isPhone ? 'family-iphone' : 'family-products'));
+        if (!isPhone) {
+          const name = familyNames[family];
+          const cards = familyCards[family] || [];
+          const products = document.getElementById('family-products');
+          products.replaceChildren(...cards);
+          products.hidden = cards.length === 0;
+          document.getElementById('family-copy').hidden = cards.length > 0;
+          document.getElementById('family-contact').hidden = cards.length > 0;
+          document.getElementById('family-title').textContent = name;
+          const contact = document.getElementById('family-contact');
+          contact.textContent = `Consultar por ${name}`;
+          contact.href = waUrl(`Hola Golden Touch! Estoy buscando ${name}. ¿Qué opciones tienen y cuál es el precio y la disponibilidad?`);
+        }
+      }));
 
       /* Pestañas WAI-ARIA */
       const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
@@ -982,6 +1133,7 @@
           const panel = document.getElementById(t.getAttribute('aria-controls'));
           if (panel) panel.hidden = !selected;
         });
+        animateArrival(document.getElementById(tab.getAttribute('aria-controls')));
         if (focus) tab.focus();
       };
       tabs.forEach((tab, idx) => {
@@ -1035,8 +1187,7 @@
       const header = document.getElementById('site-header');
       const onScroll = () => {
         const scrolled = (window.scrollY || 0) > 20;
-        header.classList.toggle('border-white/20', scrolled);
-        header.classList.toggle('shadow-2xl', scrolled);
+        header.classList.toggle('is-scrolled', scrolled);
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();

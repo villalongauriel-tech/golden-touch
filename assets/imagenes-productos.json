@@ -1,0 +1,561 @@
+{
+  "source": "Apple y PlayStation: imágenes ilustrativas de producto; no acreditan stock ni estado de unidades usadas.",
+  "models": {
+    "iPhone 12": {
+      "default": "assets/productos/iphone-12-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-12-black.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone12_black__gj93q2eeofma_large_2x.jpg"
+      }
+    },
+    "iPhone 13": {
+      "default": "assets/productos/iphone-13-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-13-black.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone13_midnight__dc2w8cyhc9iu_large_2x.jpg"
+      }
+    },
+    "iPhone 13 Pro": {
+      "default": "assets/productos/iphone-13-pro-silver.jpg",
+      "colors": {
+        "SILVER": "assets/productos/iphone-13-pro-silver.jpg"
+      },
+      "sources": {
+        "SILVER": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone13_pro_silver__dzq8ol0di7ee_large_2x.jpg"
+      }
+    },
+    "iPhone 13 Pro Max": {
+      "default": "assets/productos/iphone-13-pro-max-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-13-pro-max-black.jpg",
+        "GREEN": "assets/productos/iphone-13-pro-max-green.jpg",
+        "SILVER": "assets/productos/iphone-13-pro-max-silver.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone13_pro_max_graphite__e0rjnrin6ncm_large_2x.jpg",
+        "GREEN": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone13_pro_max_alpine_green__erdqy93lc18i_large_2x.jpg",
+        "SILVER": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone13_pro_max_silver__dbfz7im067e6_large_2x.jpg"
+      }
+    },
+    "iPhone 14": {
+      "default": "assets/productos/iphone-14-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-14-black.jpg",
+        "PURPLE": "assets/productos/iphone-14-purple.jpg",
+        "STARLIGHT": "assets/productos/iphone-14-starlight.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone14_midnight__bvwj36frtody_large_2x.jpg",
+        "PURPLE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone14_purple__cjajxy1iclg2_large_2x.jpg",
+        "STARLIGHT": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone14_starlight__f6rbukewn0mu_large_2x.jpg"
+      }
+    },
+    "iPhone 14 Pro": {
+      "default": "assets/productos/iphone-14-pro-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-14-pro-black.jpg",
+        "PURPLE": "assets/productos/iphone-14-pro-purple.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone14_pro_space_black__dym2kqku7n6u_large_2x.jpg",
+        "PURPLE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone14_pro_deep_purple__p5fjz0npooiq_large_2x.jpg"
+      }
+    },
+    "iPhone 14 Pro Max": {
+      "default": "assets/productos/iphone-14-pro-max-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-14-pro-max-black.jpg",
+        "PURPLE": "assets/productos/iphone-14-pro-max-purple.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone14_pro_max_space_black__dve23pjslceq_large_2x.jpg",
+        "PURPLE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone14_pro_max_deep_purple__r2k8f3zaymi6_large_2x.jpg"
+      }
+    },
+    "iPhone 15": {
+      "default": "assets/productos/iphone-15-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-15-black.jpg",
+        "BLUE": "assets/productos/iphone-15-blue.jpg",
+        "GREEN": "assets/productos/iphone-15-green.jpg",
+        "PINK": "assets/productos/iphone-15-pink.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone15_black__eer8kwdkdjyq_large_2x.jpg",
+        "BLUE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone15_blue__cq4qefddyl8i_large_2x.jpg",
+        "GREEN": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone15_green__f6r83449uoyi_large_2x.jpg",
+        "PINK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone15_pink__d2gop48s2aye_large_2x.jpg"
+      }
+    },
+    "iPhone 15 Pro": {
+      "default": "assets/productos/iphone-15-pro-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-15-pro-black.jpg",
+        "BLUE": "assets/productos/iphone-15-pro-blue.jpg",
+        "WHITE": "assets/productos/iphone-15-pro-white.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone15_pro_black_titanium__etz96gq8ruoi_large_2x.jpg",
+        "BLUE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone15_pro_blue_titanium__bima7n6vpb0i_large_2x.jpg",
+        "WHITE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone15_pro_white_titanium__gnb53137x2um_large_2x.jpg"
+      }
+    },
+    "iPhone 15 Pro Max": {
+      "default": "assets/productos/iphone-15-pro-max-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-15-pro-max-black.jpg",
+        "BLUE": "assets/productos/iphone-15-pro-max-blue.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone15_pro_max_black_titanium__djidfm1dcmie_large_2x.jpg",
+        "BLUE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone15_pro_max_blue_titanium__c8xeminnbm82_large_2x.jpg"
+      }
+    },
+    "iPhone 16": {
+      "default": "assets/productos/iphone-16-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-16-black.jpg",
+        "PINK": "assets/productos/iphone-16-pink.jpg",
+        "TEAL": "assets/productos/iphone-16-teal.jpg",
+        "ULTRAMARINE": "assets/productos/iphone-16-ultramarine.jpg",
+        "WHITE": "assets/productos/iphone-16-white.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_black__bedc0hlw316q_large_2x.jpg",
+        "PINK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_pink__fzr1z22a7m2q_large_2x.jpg",
+        "TEAL": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_teal__fkzqehm57iai_large_2x.jpg",
+        "ULTRAMARINE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_ultramarine__sr260qois4am_large_2x.jpg",
+        "WHITE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_white__dcn5vobxo7ki_large_2x.jpg"
+      }
+    },
+    "iPhone 16 Plus": {
+      "default": "assets/productos/iphone-16-plus-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-16-plus-black.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_plus_black__fzb15ieuikey_large_2x.jpg"
+      }
+    },
+    "iPhone 16 Pro": {
+      "default": "assets/productos/iphone-16-pro-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-16-pro-black.jpg",
+        "DESERT": "assets/productos/iphone-16-pro-desert.jpg",
+        "NATURAL": "assets/productos/iphone-16-pro-natural.jpg",
+        "WHITE": "assets/productos/iphone-16-pro-white.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_pro_black_titanium__c7t71uah5qky_large_2x.jpg",
+        "DESERT": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_pro_desert_titanium__ftixjyyve6qi_large_2x.jpg",
+        "NATURAL": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_pro_natural_titanium__b58sfb3hvv36_large_2x.jpg",
+        "WHITE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_pro_white_titanium__mjfjda73w72q_large_2x.jpg"
+      }
+    },
+    "iPhone 16 Pro Max": {
+      "default": "assets/productos/iphone-16-pro-max-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-16-pro-max-black.jpg",
+        "DESERT": "assets/productos/iphone-16-pro-max-desert.jpg",
+        "WHITE": "assets/productos/iphone-16-pro-max-white.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_pro_max_black_titanium__evlilxt8g2mq_large_2x.jpg",
+        "DESERT": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_pro_max_desert_titanium__f8058hcu01ua_large_2x.jpg",
+        "WHITE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16_pro_max_white_titanium__nrwzujp5v762_large_2x.jpg"
+      }
+    },
+    "iPhone 16e": {
+      "default": "assets/productos/iphone-16e-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-16e-black.jpg",
+        "WHITE": "assets/productos/iphone-16e-white.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16e_black__folwa2rvc3ma_large_2x.jpg",
+        "WHITE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone16e_white__qfwztyphaj2u_large_2x.jpg"
+      }
+    },
+    "iPhone 17": {
+      "default": "assets/productos/iphone-17-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-17-black.jpg",
+        "BLUE": "assets/productos/iphone-17-blue.jpg",
+        "LAVENDER": "assets/productos/iphone-17-lavender.jpg",
+        "SAGE": "assets/productos/iphone-17-sage.jpg",
+        "WHITE": "assets/productos/iphone-17-white.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_black__epmfmcpap0sy_large_2x.jpg",
+        "BLUE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_mist_blue__fjf0c9euujee_large_2x.jpg",
+        "LAVENDER": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_lavender__etuerbkei0ya_large_2x.jpg",
+        "SAGE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_sage__edsxj53vsn0i_large_2x.jpg",
+        "WHITE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_white__cddjqf5mzlaq_large_2x.jpg"
+      }
+    },
+    "iPhone 17 Air": {
+      "default": "assets/productos/iphone-17-air-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-17-air-black.jpg",
+        "BLUE": "assets/productos/iphone-17-air-blue.jpg",
+        "WHITE": "assets/productos/iphone-17-air-white.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone_air_space_black__erjeo9fa6oa6_large_2x.jpg",
+        "BLUE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone_air_sky_blue__kvm15b10x6qa_large_2x.jpg",
+        "WHITE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone_air_cloud_white__fay39sc7sru6_large_2x.jpg"
+      }
+    },
+    "iPhone 17 Pro": {
+      "default": "assets/productos/iphone-17-pro-silver.jpg",
+      "colors": {
+        "BLUE": "assets/productos/iphone-17-pro-blue.jpg",
+        "ORANGE": "assets/productos/iphone-17-pro-orange.jpg",
+        "SILVER": "assets/productos/iphone-17-pro-silver.jpg"
+      },
+      "sources": {
+        "BLUE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_pro_deep_blue__dz8sfcp4h742_large_2x.jpg",
+        "ORANGE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_pro_cosmic_orange__dm1qripnvq82_large_2x.jpg",
+        "SILVER": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_pro_silver__c7bbt5uwieye_large_2x.jpg"
+      }
+    },
+    "iPhone 17 Pro Max": {
+      "default": "assets/productos/iphone-17-pro-max-silver.jpg",
+      "colors": {
+        "BLUE": "assets/productos/iphone-17-pro-max-blue.jpg",
+        "ORANGE": "assets/productos/iphone-17-pro-max-orange.jpg",
+        "SILVER": "assets/productos/iphone-17-pro-max-silver.jpg"
+      },
+      "sources": {
+        "BLUE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_pro_max_deep_blue__frgcd836v866_large_2x.jpg",
+        "ORANGE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_pro_max_cosmic_orange__d7yolstz8cmu_large_2x.jpg",
+        "SILVER": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17_pro_max_silver__dtw5i9e8osmu_large_2x.jpg"
+      }
+    },
+    "iPhone 17e": {
+      "default": "assets/productos/iphone-17e-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/iphone-17e-black.jpg",
+        "PINK": "assets/productos/iphone-17e-pink.jpg",
+        "WHITE": "assets/productos/iphone-17e-white.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17e_black__f8ox5biet3au_large_2x.jpg",
+        "PINK": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17e_pink__bj426l1s94gi_large_2x.jpg",
+        "WHITE": "https://www.apple.com/v/iphone/compare/am/images/overview/compare_iphone17e_white__dznzme1jxvki_large_2x.jpg"
+      }
+    },
+    "iPhone 18 Pro": {
+      "default": "assets/productos/iphone-18-pro-black.png",
+      "colors": {
+        "BLACK": "assets/productos/iphone-18-pro-black.png",
+        "BURGUNDY": "assets/productos/iphone-18-pro-burgundy.png",
+        "GLACIER": "assets/productos/iphone-18-pro-glacier.png",
+        "SILVER": "assets/productos/iphone-18-pro-silver.png"
+      },
+      "sources": {
+        "BLACK": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-black-202609?wid=940&hei=1112&fmt=png-alpha&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCWEQvUEQ2K0RlZDNJelh6T1hiakdBdytYcDJJakhmeWdzWGE3eWZweldlbU01ZlZDa0xRSGNsZGN2cGtrRCtsV0tMSEdWSm02WG9JS0VxaEpJQnZwSFF4aU04bVBaVGpXenUzcE1tZ0JTTWk",
+        "BURGUNDY": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-burgundy-202609?wid=940&hei=1112&fmt=png-alpha&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCVmtqbnQyNWMvcld5Yy9DTnQyVUlQYWlwUGhxdXZuRTRGejlubW1oYWpjbUJ2MUJtQ2VhYWlBc1UxbHhMSzFTQjhlcC9qYU9xUXZmS1NmbGxtTVBCNVAvWncyUEszSEVwdS9nWVBDSFpPZmY",
+        "GLACIER": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-glacier-202609?wid=940&hei=1112&fmt=png-alpha&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCZFJQQXM4NUJneHhVVGhBeWh4RFRuMmd4MlArR3d3Tzc0cVhQN3J0NEdPb1gyaWxBVG1PRTU2YzhCN2c2emhzWHZ5ZTZTY3RKM0U0VzN2UzRGTGtzQ3BSTWlHRk01TzQ3QWhsMHdBb0NQZkk",
+        "SILVER": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-silver-202609?wid=940&hei=1112&fmt=png-alpha&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCVGJOdEdsYjE3KzExOGFjT0NXdW5CRXlFVTNWQ2NHZnVQZ1ZHVERRSkREclQ5NVJ4OStiQklybHZqYkJwOUI0UWdxbzNTY3U5ODZDSkhYT1hNS1JHaWNmOVR5UGFsc2xtOXNhVml5ZmhaTkg"
+      }
+    },
+    "iPhone 18 Pro Max": {
+      "default": "assets/productos/iphone-18-pro-max-black.png",
+      "colors": {
+        "BLACK": "assets/productos/iphone-18-pro-max-black.png",
+        "BURGUNDY": "assets/productos/iphone-18-pro-max-burgundy.png",
+        "GLACIER": "assets/productos/iphone-18-pro-max-glacier.png",
+        "SILVER": "assets/productos/iphone-18-pro-max-silver.png"
+      },
+      "sources": {
+        "BLACK": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-black-202609?wid=940&hei=1112&fmt=png-alpha&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNmxIMGwrWFVjeE1VUlRMRWVWaXVleHNjcXQ1U2FBY2RzWU80SEN4Z1NYZXA4TndFSGFWdWZMa21CRXlrUm45elpxZTk0czYvTGlFaFJ6MUo4NytKelc",
+        "BURGUNDY": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-burgundy-202609?wid=940&hei=1112&fmt=png-alpha&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNUx6WCtoaUlSYjRxQWg5OHYwMGU3Y0V3S0grNWRDVTNuaVhuc2dPbTQ4Q0V1RGVGY05iMGVCVXhlTE1BQUZjMDAxTm1nZUsxSHRZRDZzS3RtMVpRd0Q",
+        "GLACIER": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-glacier-202609?wid=940&hei=1112&fmt=png-alpha&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNlIrVGhreVd3bkM2T2VVUFVFWDlxYWV5ZElERWRzQWhyQ0Rwckl6Y1pkWnBzc0VHaDlyWnc3WFg1a2VpT21xTVVSTFY0UkdPZmR4RjZFWCtGdUNoa2E",
+        "SILVER": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-silver-202609?wid=940&hei=1112&fmt=png-alpha&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNWtvNWRUSnBraGdtbVpoaEhCcStEZ1JIMnJUYkhxeFlQUFF6U1JnK1dZZmROL1VCcUxMZGhIeWpHS1Y3Y0ZmQnB1TDcrSFk1dTh4UW5LRWFTUk84MUg"
+      }
+    },
+    "Apple Watch SE 3": {
+      "default": "assets/productos/apple-watch-se-3-midnight.jpg",
+      "colors": {
+        "MIDNIGHT": "assets/productos/apple-watch-se-3-midnight.jpg",
+        "STARLIGHT": "assets/productos/apple-watch-se-3-starlight.jpg"
+      },
+      "sources": {
+        "MIDNIGHT": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_se_3_aluminum_midnight__cmsklrr1ariq_large_2x.jpg",
+        "STARLIGHT": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_se_3_aluminum_starlight__berhf6s2b1bm_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo y color de caja. Correa y tamaño a confirmar."
+    },
+    "Apple Watch Series 11": {
+      "default": "assets/productos/apple-watch-series-11-jet-black.jpg",
+      "colors": {
+        "JET BLACK": "assets/productos/apple-watch-series-11-jet-black.jpg",
+        "SILVER": "assets/productos/apple-watch-series-11-silver.jpg",
+        "ROSE GOLD": "assets/productos/apple-watch-series-11-rose-gold.jpg",
+        "SPACE GRAY": "assets/productos/apple-watch-series-11-space-gray.jpg"
+      },
+      "sources": {
+        "JET BLACK": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_series_11_aluminum_jet_black__e6e4ueftosgi_large_2x.jpg",
+        "SILVER": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_series_11_aluminum_silver__cg9kl6knvy2q_large_2x.jpg",
+        "ROSE GOLD": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_series_11_aluminum_rose_gold__teqtd20c3f2q_large_2x.jpg",
+        "SPACE GRAY": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_series_11_aluminum_space_gray__e9a6tq118vue_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo y color de caja. Correa y tamaño a confirmar."
+    },
+    "Apple Watch Series 12": {
+      "default": "assets/productos/apple-watch-series-12-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/apple-watch-series-12-black.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_series_12_aluminum_black__cs7x4nfsym82_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo y color de caja. Correa y tamaño a confirmar."
+    },
+    "Apple Watch Ultra 3": {
+      "default": "assets/productos/apple-watch-ultra-3-black.jpg",
+      "colors": {
+        "BLACK": "assets/productos/apple-watch-ultra-3-black.jpg",
+        "NATURAL": "assets/productos/apple-watch-ultra-3-natural.jpg"
+      },
+      "sources": {
+        "BLACK": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_ultra_3_titanium_black__et3o71qjhxg2_large_2x.jpg",
+        "NATURAL": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_ultra_3_titanium_natural__f4e1mwataoa6_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo y color de caja. Correa y tamaño a confirmar."
+    },
+    "Apple Watch Ultra 4": {
+      "default": "assets/productos/apple-watch-ultra-4-black-titanium.jpg",
+      "colors": {
+        "BLACK TITANIUM": "assets/productos/apple-watch-ultra-4-black-titanium.jpg",
+        "NATURAL": "assets/productos/apple-watch-ultra-4-natural.jpg"
+      },
+      "sources": {
+        "BLACK TITANIUM": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_ultra_4_titanium_black__emsqs9pgi5g2_large_2x.jpg",
+        "NATURAL": "https://www.apple.com/v/watch/compare/ai/images/overview/compare_watch_ultra_4_titanium_natural__b82idzgac5aq_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo y color de caja. Correa y tamaño a confirmar."
+    },
+    "MacBook Neo 13 pulgadas": {
+      "default": "assets/productos/macbook-neo-13-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/mac/compare/ah/images/overview/compare_macbook_neo_a18_silver__d23cbmwh42eu_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "MacBook Air M5 13 pulgadas": {
+      "default": "assets/productos/macbook-air-m5-13-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/mac/compare/ah/images/overview/compare_macbook_air_m5_silver__bbwooiazy7cy_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "MacBook Air M5 15 pulgadas": {
+      "default": "assets/productos/macbook-air-m5-15-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/mac/compare/ah/images/overview/compare_macbook_air_m5_15_silver__gdgd4la8qemq_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "MacBook Pro M5 14 pulgadas": {
+      "default": "assets/productos/macbook-pro-m5-14-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/mac/compare/ah/images/overview/compare_macbook_pro_m5_14_spaceblack__e8bg1b4hasii_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "MacBook Pro M5 Pro 14 pulgadas": {
+      "default": "assets/productos/macbook-pro-m5-pro-14-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/mac/compare/ah/images/overview/compare_macbook_pro_m5_14_spaceblack__e8bg1b4hasii_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "MacBook Pro M5 Pro 16 pulgadas": {
+      "default": "assets/productos/macbook-pro-m5-pro-16-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/mac/compare/ah/images/overview/compare_macbook_pro_m5_16_spaceblack__81ui3u6gyuqu_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "Mac mini M4": {
+      "default": "assets/productos/mac-mini-m4.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/mac/compare/ah/images/overview/compare_mac_mini_m4_silver__d0eyh8j772ye_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "Mac mini M6": {
+      "default": "assets/productos/mac-mini-m6.webp",
+      "colors": {},
+      "sources": {
+        "default": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mac-mini-summary-select-202608?wid=5120&hei=3280&fmt=webp&qlt=90&.v=WGZIRWwyZDVQaHBkK2N1VVlsMFNpcVhYSEpZZncrY29LOUl0SnVNSWR6V3RQaHRXQmg1Smw1K0VETVJwK2N3R3lPWjFvdU5EZVdwUnRCZ2RHSDBFS2dDVGlhMWdQMUw4Q0cxZ0ZBVlNTUjk3elJuQlNOb1hBU2ZGc01uK0d5YTU&traceId=1"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "iPad A16 11 pulgadas": {
+      "default": "assets/productos/ipad-a16-11-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/ipad/compare/am/images/overview/ipad_11th_a16_blue__eyfta89o7eie_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "iPad Air M4 11 pulgadas": {
+      "default": "assets/productos/ipad-air-m4-11-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/ipad/compare/am/images/overview/ipad_air_11_m4_blue__exgp5c6s4zgy_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "iPad Air M4 13 pulgadas": {
+      "default": "assets/productos/ipad-air-m4-13-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/ipad/compare/am/images/overview/ipad_air_13_m4_blue__dvsjwapfvuc2_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "iPad Pro M4 11 pulgadas": {
+      "default": "assets/productos/ipad-pro-m4-11-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/ipad/compare/am/images/overview/ipad_pro_11_m4_silver__eowi3mx395qq_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "iPad Pro M5 11 pulgadas": {
+      "default": "assets/productos/ipad-pro-m5-11-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/ipad/compare/am/images/overview/techspecs_ipad_pro_11_m5__cypat3eta3u6_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "iPad Pro M5 13 pulgadas": {
+      "default": "assets/productos/ipad-pro-m5-13-pulgadas.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/v/ipad/compare/am/images/overview/ipad_pro_13_m5_silver__dyubev4o3s8y_large_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "AirPods Pro 3": {
+      "default": "assets/productos/airpods-pro-3.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-hero-select-202509?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1758077264484"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "AirPods Max 2 USB-C": {
+      "default": "assets/productos/airpods-max-2-usb-c.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-midnight_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdmVWNWdHYnp5cHkwMldsSElEOHpyd0cyWGRFNFZ5QTk3bFlteis2Q2NNaWpENFdPQTN0TWQ4ejhtTWxrUHVDeElGZGV2eWhZaEljUzNSeDlxcDVuWGszbTFldUtUQzN0ellEWHZ3UUFYSS8"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "AirPods 5": {
+      "default": "assets/productos/airpods-5.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-select-202609_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=eFJocjZCNlgzZlpSRHllMEpvT0N5MFc3QXkrd1lOczBINzN1b204SXc5djNHc3NlSmU2dzJyR1kxZEwyTE1neUJkRlpCNVhYU3AwTldRQldlSnpRa081UnNNSklyczA1UVE2Mk05aktxd1E"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "AirPods 5 con carga inalámbrica": {
+      "default": "assets/productos/airpods-5-con-carga-inal-mbrica.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-wcc-select-202609_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=aFZUWmUrUDM2bFVzejhMU3AxSHJHendJQVRIbmUrVkgvaHR4ajlmK3pJN0hJa2hkRmxkTlJIMk9SdFNSaWFNODE1UUxLT2t0cW42N3FvQzVqaGhrVWRsZXJCWXk5YjBoSm5GZDdURmRwclorYWpGdS9XeFgvbS9ITnNYOEhYaG4"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "Apple Pencil USB-C": {
+      "default": "assets/productos/apple-pencil-usb-c.png",
+      "colors": {},
+      "sources": {
+        "default": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/apple-pencil-usbc-splitter-202405?wid=448&hei=800&fmt=png-alpha&.v=T1UzeHljZElpYVY1a2xjdUcrNzVYcGpxWHU1d0U4T2d5b1U4cDBGejdMQXU5S3pJT29ETmxKUC9Ccmk1NWh4NnV5NVU0QmM2b3hmeWJWTTVtN1o5Zmh1OHRIS2JVaVNHRTdCZUcvYXVtODErYWpGdS9XeFgvbS9ITnNYOEhYaG4"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "Apple Pencil Pro": {
+      "default": "assets/productos/apple-pencil-pro.png",
+      "colors": {},
+      "sources": {
+        "default": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/apple-pencil-pro-splitter-202405?wid=448&hei=800&fmt=png-alpha&.v=cU9HSUJpZUhzWS81ZmZ1ZWtXeDJEdlRJWGw3S3R6dEpCTGNXeVVhZUFHWTZCNnRNaFdpT1B0RFFDMmZuUkNvUVM0TjRWdzF2UjRGVEY0c3dBQVZ6VGJ5a3JRQ2g4MFJBQW5adWxqRlVpRWM"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "Magic Mouse USB-C": {
+      "default": "assets/productos/magic-mouse-usb-c.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXK53?wid=890&hei=890&fmt=jpeg&qlt=90&.v=1730508286345"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "AirPods 4": {
+      "default": "assets/productos/airpods-4.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/newsroom/images/2024/09/apple-introduces-airpods-4/article/Apple-AirPods-4-with-case-240909_big.jpg.small_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "AirPods 4 con cancelación de ruido": {
+      "default": "assets/productos/airpods-4-con-cancelaci-n-de-ruido.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.apple.com/newsroom/images/2024/09/apple-introduces-airpods-4/article/Apple-AirPods-4-with-case-240909_big.jpg.small_2x.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "PlayStation 5 Slim con lectora": {
+      "default": "assets/productos/playstation-5-slim-con-lectora.png",
+      "colors": {},
+      "sources": {
+        "default": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-slim-edition-left-image-block-01-en-24jun24?$800px--t$"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "PlayStation 5 Slim Digital": {
+      "default": "assets/productos/playstation-5-slim-digital.png",
+      "colors": {},
+      "sources": {
+        "default": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-slim-digital-edition-right-image-block-01-en-24jun24?$800px--t$"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "PlayStation 5 Pro": {
+      "default": "assets/productos/playstation-5-pro.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://www.playstation.com/content/dam/global_pdc/en/hardware/ps5-pro/product-photography/spinset-update/ps5-pro-spinset-_V004_JPEG_4K-1001.jpg"
+      },
+      "note": "Imagen ilustrativa del modelo. Color y configuración a confirmar."
+    },
+    "Joystick para PS5": {
+      "default": "assets/productos/joystick-para-ps5.jpg",
+      "colors": {},
+      "sources": {
+        "default": "https://gmedia.playstation.com/is/image/SIEPDC/dualsense-white-screenshot-04-en-08dec21?$800px$"
+      },
+      "note": "Referencia visual: DualSense. Confirmar modelo y color del joystick ofrecido."
+    }
+  }
+}
