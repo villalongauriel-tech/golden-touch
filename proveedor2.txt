@@ -1,0 +1,6 @@
+# Pegá acá el mensaje del Canal de Difusión del Proveedor 2
+# Ejemplo:
+IPHONE 16 PRO MAX 1260
+IPHONE 16 128 860
+IPHONE 15 PRO 810
+IPHONE 13 370

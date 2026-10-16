@@ -27,6 +27,16 @@ Landing page oficial de alta conversión para **Golden Touch**, especialistas en
    git commit -m "Actualizar datos"
    git push origin main
    ```
-5. Vercel compila y publica los cambios automáticamente en vivo.
+## 🔄 Actualización Diaria de Precios de Proveedores (WhatsApp)
+
+El proyecto incluye un motor automatizado que lee los mensajes de WhatsApp de los dos proveedores, compara sus costos, elige el más barato, le suma el margen de Golden Touch y actualiza la web:
+
+1. Pegá el texto del Proveedor 1 en `proveedor1.txt`.
+2. Pegá el texto del Canal de Difusión en `proveedor2.txt`.
+3. Ejecutá:
+   ```bash
+   node actualizar_precios.js --push
+   ```
+4. El script compara los precios en una tabla, actualiza `precios.json`, lo sube a GitHub y Vercel publica la web en 20 segundos.
 
 Consulta el documento [MANUAL_PROYECTO_IA.md](./MANUAL_PROYECTO_IA.md) para detalles completos de diseño, reglas legales de la Ley 24.240 y estructura de mensajes.
