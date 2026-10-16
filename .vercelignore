@@ -2,3 +2,7 @@ Golden_Touch_Manual_de_Trabajo_v6.pdf
 *.pdf
 .git
 .gitignore
+bot-whatsapp/
+actualizar_precios.js
+proveedor1.txt
+proveedor2.txt

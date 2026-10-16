@@ -1,0 +1,26 @@
+{
+  "horario": {
+    "dias": "1-6",
+    "hora": "10",
+    "minuto": "00",
+    "descripcion": "De Lunes a Sábado a las 10:00 AM"
+  },
+  "proveedor1": {
+    "numeroTelefono": "5491100000000",
+    "mensajeSaliente": "Hola buen día! ¿Me pasás la lista de precios y cotizaciones de hoy por favor?"
+  },
+  "proveedor2": {
+    "nombreCanalOIdentificador": "Canal de Difusión",
+    "esCanal": true
+  },
+  "margenesUSD": {
+    "iPhone 16 Pro Max": 80,
+    "iPhone 16": 80,
+    "iPhone 15 Pro": 80,
+    "iPhone 15": 70,
+    "iPhone 14": 70,
+    "iPhone 13": 70,
+    "defecto": 80
+  },
+  "notificarAlDuenio": true
+}

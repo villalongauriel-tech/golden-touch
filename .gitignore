@@ -2,3 +2,9 @@
 .env*
 Golden_Touch_Manual_de_Trabajo_v6.pdf
 *.pdf
+
+# WhatsApp Bot (Credenciales locales y librerías)
+node_modules/
+bot-whatsapp/node_modules/
+bot-whatsapp/auth_info_baileys/
+auth_info_baileys/
