@@ -1,0 +1,65 @@
+{
+  "updatedAt": "2026-10-16T17:53:00.726Z",
+  "dolarReferencia": 1380,
+  "margenDefaultUSD": 80,
+  "sellados": {
+    "iPhone 16 Pro Max": {
+      "costoProveedor": 1260,
+      "proveedorElegido": "Canal Difusión",
+      "margenUSD": 80,
+      "precioFinalUSD": 1340,
+      "precioTexto": "Desde USD 1.340",
+      "cuotasTexto": "o en hasta 4 cuotas fijadas"
+    },
+    "iPhone 16": {
+      "costoProveedor": 860,
+      "proveedorElegido": "Canal Difusión",
+      "margenUSD": 80,
+      "precioFinalUSD": 940,
+      "precioTexto": "Desde USD 940",
+      "cuotasTexto": "o en hasta 4 cuotas fijadas"
+    },
+    "iPhone 15": {
+      "costoProveedor": 740,
+      "proveedorElegido": "Proveedor 1",
+      "margenUSD": 70,
+      "precioFinalUSD": 810,
+      "precioTexto": "Desde USD 810",
+      "cuotasTexto": "o en hasta 4 cuotas fijadas"
+    }
+  },
+  "seminuevos": {
+    "iPhone 15 Pro": {
+      "costoProveedor": 810,
+      "proveedorElegido": "Canal Difusión",
+      "margenUSD": 80,
+      "precioFinalUSD": 890,
+      "precioTexto": "Desde USD 890",
+      "cuotasTexto": "o en hasta 4 cuotas fijadas"
+    },
+    "iPhone 15": {
+      "costoProveedor": 740,
+      "proveedorElegido": "Proveedor 1",
+      "margenUSD": 70,
+      "precioFinalUSD": 810,
+      "precioTexto": "Desde USD 810",
+      "cuotasTexto": "o en hasta 4 cuotas fijadas"
+    },
+    "iPhone 14": {
+      "costoProveedor": 510,
+      "proveedorElegido": "Proveedor 1",
+      "margenUSD": 70,
+      "precioFinalUSD": 580,
+      "precioTexto": "Desde USD 580",
+      "cuotasTexto": "o en hasta 4 cuotas fijadas"
+    },
+    "iPhone 13": {
+      "costoProveedor": 370,
+      "proveedorElegido": "Canal Difusión",
+      "margenUSD": 70,
+      "precioFinalUSD": 440,
+      "precioTexto": "Desde USD 440",
+      "cuotasTexto": "o en hasta 4 cuotas fijadas"
+    }
+  }
+}

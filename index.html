@@ -965,12 +965,45 @@
         return li;
       };
 
-      // Inyectar Tarjetas
-      Object.keys(CATALOG).forEach((type) => {
-        const list = document.querySelector(`[data-catalog="${type}"]`);
-        if (!list) return;
-        CATALOG[type].forEach((item) => list.appendChild(renderCatalogCard(item, type)));
-      });
+      // Renderizado Dinámico de Catálogo
+      const renderCatalog = () => {
+        Object.keys(CATALOG).forEach((type) => {
+          const list = document.querySelector(`[data-catalog="${type}"]`);
+          if (!list) return;
+          list.innerHTML = '';
+          CATALOG[type].forEach((item) => list.appendChild(renderCatalogCard(item, type)));
+        });
+      };
+
+      // Carga Dinámica desde precios.json (sin bloquear render inicial)
+      const loadDynamicPrices = async () => {
+        if (typeof fetch !== 'function') return;
+        try {
+          const res = await fetch('precios.json?v=' + Date.now());
+          if (res.ok) {
+            const data = await res.json();
+            ['sellados', 'seminuevos'].forEach((type) => {
+              if (data[type] && CATALOG[type]) {
+                CATALOG[type].forEach((item) => {
+                  const dynamic = data[type][item.model];
+                  if (dynamic) {
+                    if (dynamic.precioTexto) item.priceRef = dynamic.precioTexto;
+                    else if (dynamic.precioFinalUSD) item.priceRef = `Desde USD ${dynamic.precioFinalUSD.toLocaleString('es-AR')}`;
+                    if (dynamic.cuotasTexto) item.installmentRef = dynamic.cuotasTexto;
+                  }
+                });
+              }
+            });
+            renderCatalog();
+          }
+        } catch (e) {
+          console.warn('Fallback a precios base de catálogo:', e);
+        }
+      };
+
+      // Inicializar
+      renderCatalog();
+      loadDynamicPrices();
 
       /* Pestañas WAI-ARIA */
       const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
