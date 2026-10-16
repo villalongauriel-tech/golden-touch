@@ -159,9 +159,10 @@ async function startBot() {
     const { connection, lastDisconnect, qr } = update;
 
     if (qr) {
-      console.log('\n📲 ESCANEÁ ESTE CÓDIGO QR CON TU WHATSAPP (Solo se hace una vez):\n');
+      console.log('\n📲 ESCANEÁ ESTE CÓDIGO QR CON EL WHATSAPP OFICIAL DE GOLDEN TOUCH:\n');
+      console.log('📌 Línea Comercial: +54 9 11 2559-1488');
       qrcode.generate(qr, { small: true });
-      console.log('Abrí WhatsApp en tu iPhone -> Ajustes -> Dispositivos vinculados -> Vincular un dispositivo\n');
+      console.log('Abrí WhatsApp en el teléfono oficial -> Ajustes -> Dispositivos vinculados -> Vincular un dispositivo\n');
     }
 
     if (connection === 'close') {

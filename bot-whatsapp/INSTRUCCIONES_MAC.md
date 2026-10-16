@@ -26,8 +26,8 @@ Abrí el archivo `bot-whatsapp/config.json` con cualquier editor de texto o el B
    *(Si tu Mac te dice "No se puede abrir porque proviene de un desarrollador no identificado", hacé clic derecho sobre el archivo ➡️ seleccioná **Abrir** ➡️ y confirmá en **Abrir**)*.
 3. Se abrirá una ventana negra (la Terminal) y verás un **código QR**.
 
-### 4. Vincular tu WhatsApp
-1. Abrí WhatsApp en tu iPhone.
+### 4. Vincular el WhatsApp Oficial de Golden Touch
+1. Abrí WhatsApp en el teléfono que tiene la **línea oficial del emprendimiento (+54 9 11 2559-1488)**. *(Tu número personal NO se toca y queda 100% privado).*
 2. Andá a **Ajustes ➡️ Dispositivos vinculados ➡️ Vincular un dispositivo**.
 3. Apuntá la cámara de tu teléfono al código QR de la pantalla de tu Mac.
 4. ¡Listo! Te saldrá el mensaje:  
