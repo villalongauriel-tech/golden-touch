@@ -79,8 +79,8 @@ El número visible del footer (`+54 9 11 2559-1488`) está escrito en el HTML.
 * Los textos del resultado, la leyenda legal y el mensaje de WhatsApp son literales aprobados: no reformularlos sin autorización.
 
 ### D. Botón flotante de WhatsApp (`#wa-float`)
-* El badge se calcula con la zona `America/Argentina/Buenos_Aires` y se recalcula cada minuto: de lunes a sábado de 10 a 20 h muestra «🟢 En línea · Canning»; fuera de ese horario, «🌙 Dejanos tu consulta · Canning».
-* Si cambia el horario comercial, actualizar `updateWaBadge` y `CONFIG.HORARIOS`.
+* Ícono de WhatsApp más el texto fijo «Dejanos tu consulta» (decisión del 17/10/2026: sin horario, sin «Canning» y sin emojis). En pantallas de menos de 380 px queda solo el ícono.
+* El enlace usa `data-wa="general"`, así que el mensaje inicial sale de `MESSAGES.general`.
 
 ### E. Mensajes predefinidos de WhatsApp
 Objeto `MESSAGES` (`general`, `canje`, `modelo`), aplicado a todo enlace con `data-wa="…"`.

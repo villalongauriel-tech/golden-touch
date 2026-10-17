@@ -61,9 +61,8 @@ Invocación desde la terminal:
 - Leyenda obligatoria: «* Cotización preliminar orientativa según batería y estado estético. El valor final se ratifica tras la inspección física en mano.»
 - Mensaje de WhatsApp: «Hola Golden Touch! Hice la simulación de Plan Canje en la web entregando mi [Modelo Actual] por un [Modelo Nuevo]. La diferencia estimada fue de aprox. USD [Diferencia]. ¿Me confirman cotización para coordinar?»
 
-**Tarea 4 · Badge del botón flotante (hora argentina, UTC−3)**
-- De lunes a sábado, de 10:00 a 20:00: `🟢 En línea · Canning`.
-- Fuera de ese horario y los domingos: `🌙 Dejanos tu consulta · Canning`.
+**Tarea 4 · Botón flotante** (decisión actualizada el 17/10/2026)
+- Ícono de WhatsApp más el texto fijo «Dejanos tu consulta», sin horario, sin «Canning» y sin emojis. Reemplaza al badge por horario («🟢 En línea · Canning» / «🌙 Dejanos tu consulta · Canning»).
 
 **Otros**
 - Los costos en `precios.json` dentro del historial de git se limpiarán más adelante; por ahora no se tocan.
@@ -97,3 +96,7 @@ Formato: `AAAA-MM-DD · Agente (modelo) · qué se hizo · resultado / próximo 
 - 2026-10-17 · Claude Code (Opus 5.5) · Documentación sincronizada con lo publicado: `MANUAL_PROYECTO_IA.md` reescrito (arquitectura actual, identidad marfil/dorado/grafito, cómo modificar el catálogo, el simulador y el badge, orden de secciones y flujo de publicación); en `CLAUDE.md`, la descripción del diseño corregida y las Tareas 1, 2 y 4 marcadas como 🟢 publicadas; en `README.md`, eliminadas las referencias a la UI y al manual anteriores. Ninguno de estos archivos se publica en el sitio (`.vercelignore`). Sin commit: esperando el OK del usuario.
 - 2026-10-17 · Codex (gpt-6-luna, medium) · Chequeo de la documentación contra el código: nombres, IDs, orden de secciones y exclusiones OK. Encontró 6 imprecisiones; Claude corrigió 4 (precios en `index.html`, colores tachados, alcance del contraste AA, «referencia de proveedor» en el README). Las 2 de `CLAUDE.md` (líneas 35 y 44) son el texto original de la hoja de ruta aprobada y se dejan como están. Sin commit: esperando el OK del usuario.
 - 2026-10-17 · Usuario · Aprobó el commit y el push de la documentación. Tarea 3: Elías todavía no respondió sobre los barrios privados; sigue en pausa.
+- 2026-10-17 · Antigravity (gemini-3.8-flash-high) · Commit `1e538d5` (documentación) y push a `main`; sitio 200 y documentos 404.
+- 2026-10-17 · Usuario · Le mandó a Elías la consulta por los barrios privados (Tarea 3). Cambió el botón flotante: solo ícono + «Dejanos tu consulta».
+- 2026-10-17 · Claude Code (Opus 5.5) · Botón flotante actualizado: texto fijo «Dejanos tu consulta», `aria-label` «Dejanos tu consulta por WhatsApp»; se eliminó `updateWaBadge` y su intervalo. Manual y `CLAUDE.md` actualizados. Sin commit: esperando el OK del usuario.
+- 2026-10-17 · Usuario · Aprobó el commit y el push del cambio del botón flotante.

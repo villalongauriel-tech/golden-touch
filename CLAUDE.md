@@ -48,7 +48,7 @@ Antigravity y OpenAI Codex actúan como tu **equipo de soporte, revisión técni
 - En pausa a la espera de confirmación de Elías sobre menciones explícitas de barrios privados.
 
 ### ✅ Tarea 4: Botón Flotante de WhatsApp & Pulido Visual · 🟢 Publicada (`a2af4d3`)
-1. Botón flotante permanente (fixed `bottom-6 right-6 z-50`) con ícono de WhatsApp, badge *"En línea · Canning"* y enlace a la línea comercial oficial.
+1. Botón flotante permanente (fixed `bottom-6 right-6 z-50`) con ícono de WhatsApp, texto fijo *"Dejanos tu consulta"* (cambiado el 17/10/2026; antes era un badge por horario) y enlace a la línea comercial oficial.
 2. Pulido de *ambient rim light* en `assets/liquid-glass.css` para realzar las imágenes de los productos.
 
 ---
