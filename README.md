@@ -29,7 +29,13 @@ Landing page oficial de alta conversión para **Golden Touch**, especialistas en
    git commit -m "Actualizar datos"
    git push origin main
    ```
-5. Vercel compila y publica los cambios automáticamente en vivo.
+## Integración de los cambios remotos del 16 de octubre de 2026
+
+Se conservan los scripts `actualizar_precios.js`, `guardar_cambios.command` y la carpeta `bot-whatsapp` incorporados en GitHub. No se ejecutaron ni se activó el bot durante esta integración.
+
+El actualizador remoto trabaja con el esquema anterior `precios.json`; no actualiza el catálogo actual `assets/catalogo.js`. Está pendiente adaptar su comparación por condición, capacidad, batería, SIM y color, y aplicar la política aprobada en la carpeta interna. No usarlo para actualizar esta versión de la web. El bot también requiere esa adaptación antes de automatizar precios.
+
+La página conserva el catálogo por variantes y no carga `precios.json`, que incluye costos y márgenes internos. Este archivo, las listas de proveedores y los scripts quedan excluidos del despliegue en Vercel. Esta exclusión no elimina archivos ni historial del repositorio de GitHub.
 
 ## Actualizaciones de precios
 

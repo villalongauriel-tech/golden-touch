@@ -1,0 +1,7 @@
+# Pegá acá el mensaje de WhatsApp del Proveedor 1
+# Ejemplo:
+16 Pro Max 256 Desert 1270
+16 128 Black 870
+15 128 Blue 740
+14 128 Midnight 510
+13 128 Green 380
