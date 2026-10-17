@@ -44,7 +44,7 @@ Antigravity y OpenAI Codex actúan como tu **equipo de soporte, revisión técni
    - Cálculo en tiempo real de valor estimado de toma, costo del nuevo y diferencia a abonar.
 2. Botón de acción: *"Validar cotización por WhatsApp"* enviando los datos de la simulación al chat oficial.
 
-### ✅ Tarea 3: Entregas y Envíos (en `index.html` -> `#zona`) · 🟢 Publicada
+### ✅ Tarea 3: Entregas y Envíos (en `index.html` -> `#zona`) · 🟢 Publicada (`41fc58f`)
 1. Puntos presenciales en mano: Canning y alrededores (nodo principal), San Vicente y Ezeiza (solo «Ezeiza»). Puntos comerciales y seguros acordados, sin nombrar barrios privados.
 2. Envíos asegurados a todo el país con número de seguimiento en tiempo real y embalaje de alta seguridad.
 3. Encomiendas por Vía Cargo con opción de pago del flete en destino al retirar o recibir el paquete.

@@ -38,7 +38,7 @@ Invocación desde la terminal:
 |---|---|---|
 | 1 · Tarjetas estilo Apple Store (píldoras, swatches, CTA único) | 🟢 Publicada (`a2af4d3`) | — |
 | 2 · Simulador Plan Canje | 🟢 Publicada (`a2af4d3`) | — |
-| 3 · Entregas y Envíos (Canning, San Vicente, Ezeiza + Envíos país) | 🟢 Publicada | Antigravity |
+| 3 · Entregas y Envíos (Canning, San Vicente, Ezeiza + Envíos país) | 🟢 Publicada (`41fc58f`) | Antigravity |
 | 4 · Botón flotante WhatsApp + rim light | 🟢 Publicada (`a2af4d3`) | — |
 | Publicación (push a `main`) | 🟢 Publicada · commit `a2af4d3` (2026-10-17) · verificada por Antigravity y Claude | — |
 
@@ -105,4 +105,4 @@ Formato: `AAAA-MM-DD · Agente (modelo) · qué se hizo · resultado / próximo 
 - 2026-10-17 · Claude Code (Opus 5.5) · Botón flotante actualizado: texto fijo «Dejanos tu consulta», `aria-label` «Dejanos tu consulta por WhatsApp»; se eliminó `updateWaBadge` y su intervalo. Manual y `CLAUDE.md` actualizados. Sin commit: esperando el OK del usuario.
 - 2026-10-17 · Usuario · Aprobó el commit y el push del cambio del botón flotante.
 - 2026-10-17 · Antigravity (gemini-3.8-flash-high) · Commit `aad6e41` y push a `main` del botón flotante con texto fijo.
-- 2026-10-17 · Antigravity (gemini-3.8-flash-high) · Tarea 3 implementada en `index.html` (#zona, menús de navegación y FAQ 5). Cobertura presencial en Canning y alrededores (punto principal), San Vicente y Ezeiza; envíos asegurados a todo el país con opción de pago en destino vía Vía Cargo. Commit y push a `main` tras el OK explícito del usuario.
+- 2026-10-17 · Antigravity (gemini-3.8-flash-high) · Tarea 3 implementada en `index.html` (#zona, menús de navegación y FAQ 5). Cobertura presencial en Canning y alrededores (punto principal), San Vicente y Ezeiza; envíos asegurados a todo el país con opción de pago en destino vía Vía Cargo. Commit `41fc58f` y push a `main` tras el OK explícito del usuario. Deploy verificado en Vercel.
