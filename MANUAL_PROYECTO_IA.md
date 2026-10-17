@@ -1,132 +1,122 @@
 # 📱 Guía Oficial del Proyecto · Golden Touch (Para IA y Desarrolladores)
 
-> **Instrucción para la IA:** Este documento describe la arquitectura, reglas de negocio, diseño y configuración de la landing page de **Golden Touch**. Usalo como contexto de referencia para realizar cualquier modificación, adición de modelos, cambio de precios o ajuste de diseño sin romper la estética ni la funcionalidad existente.
+> **Instrucción para la IA:** Este documento describe la arquitectura, las reglas de negocio, el diseño y la configuración de la landing page de **Golden Touch**. Usalo como referencia para cualquier modificación sin romper la estética ni la funcionalidad.
+> El estado vivo de las tareas, las decisiones aprobadas y la bitácora del equipo IA están en [`ESTADO_EQUIPO.md`](./ESTADO_EQUIPO.md). Las reglas para agentes están en [`AGENTS.md`](./AGENTS.md) y [`CLAUDE.md`](./CLAUDE.md).
+> Última actualización: 17/10/2026 (commit `a2af4d3`).
 
 ---
 
 ## 1. Información General del Emprendimiento
 
 * **Marca:** Golden Touch
-* **Rubro:** Comercialización de iPhones (Nuevos Sellados de Fábrica y Seminuevos Seleccionados) y servicio de **Plan Canje**.
-* **Ubicación operativa:** Canning y Zona Sur (Buenos Aires, Argentina). *Nota: No cuenta con local físico a la calle; opera con entregas pactadas en puntos comerciales y seguros.*
-* **Canal de venta principal:** WhatsApp e Instagram.
-* **Canal online:** [https://golden-touch-five.vercel.app](https://golden-touch-five.vercel.app)
-* **Repositorio en GitHub:** [https://github.com/villalongauriel-tech/golden-touch](https://github.com/villalongauriel-tech/golden-touch)
+* **Rubro:** iPhones nuevos sellados, seminuevos seleccionados y open box, más un servicio de **Plan Canje**. El catálogo también incluye Apple Watch, Mac, iPad, AirPods, PlayStation y accesorios.
+* **Ubicación operativa:** Canning, Ezeiza y Zona Sur (Buenos Aires, Argentina). *No tiene local a la calle: las entregas se pactan en puntos comerciales y seguros.*
+* **Canal de venta principal:** WhatsApp (línea oficial **+54 9 11 2559-1488**, `5491125591488`) e Instagram.
+* **Sitio:** [https://golden-touch-five.vercel.app](https://golden-touch-five.vercel.app)
+* **Repositorio:** [https://github.com/villalongauriel-tech/golden-touch](https://github.com/villalongauriel-tech/golden-touch)
 
 ---
 
 ## 2. Arquitectura Técnica
 
-El proyecto fue diseñado de manera **autocontenida, ágil y sin dependencias complejas** (sin React, sin bundlers pesados, sin necesidad de compilar):
+Sitio estático, sin compilación ni bundlers:
 
 | Archivo / Carpeta | Propósito |
 |---|---|
-| [`index.html`](file:///C:/Users/villa/OneDrive/Proyects/Golde_Touch/index.html) | Toda la landing page: marcado semántico HTML5, estilos CSS, configuración de Tailwind y lógica JavaScript interactiva. |
-| [`Logo.jpg`](file:///C:/Users/villa/OneDrive/Proyects/Golde_Touch/Logo.jpg) | Isotipo oficial de Golden Touch (monograma GT dorado en círculo negro con manzana). |
-| [`assets/`](file:///C:/Users/villa/OneDrive/Proyects/Golde_Touch/assets/) | Renders oficiales de estudio de Apple con fondo transparente (`16-pro.png`, `16.png`, `15-pro.png`, `15.png`, `14.png`, `13.png`). |
-| `.gitignore` / `.vercelignore` | Excluyen archivos internos, documentación privada o `.env` para que no se suban a la web. |
+| `index.html` | Toda la landing: marcado semántico, estilos base, configuración de Tailwind y la lógica JavaScript. |
+| `assets/catalogo.js` | Catálogo público en `window.GOLDEN_TOUCH_CATALOG`: `groups` (`sellados`, `seminuevos`, `openbox`) y `families` (`watch`, `mac`, `ipad`, `audio`, `gaming`, `accesorios`). **Lo genera la carpeta interna `Gestion de precios`; no editarlo a mano.** |
+| `assets/liquid-glass.css` | Acabado de vidrio: header flotante, selector de familias, simulador de Plan Canje, botón flotante de WhatsApp y *rim light* de las fotos. Incluye los modos de transparencia reducida, contraste alto y movimiento reducido. |
+| `assets/productos/` | Fotos de producto por modelo y color (en su mayoría JPG con fondo blanco). |
+| `assets/imagenes-productos.json` | Relaciona modelo y color con su foto y su URL de origen. |
+| `Logo.jpg` | Isotipo oficial (monograma GT). |
+| `.vercelignore` | Deja fuera del sitio los archivos internos: precios, proveedores, bot, scripts y documentación del equipo. |
 
-* **Estilos:** Tailwind CSS mediante CDN oficial (`<script src="https://cdn.tailwindcss.com"></script>`) con paleta de colores personalizada integrada en `tailwind.config`.
+* **Estilos:** Tailwind CSS por CDN (`cdn.tailwindcss.com`), con paleta propia en `tailwind.config` y variables `--gt-*` en `index.html`.
 * **Tipografía:** [Manrope](https://fonts.google.com/specimen/Manrope) vía Google Fonts.
-* **JavaScript:** Vanilla JS moderno (ES6+), sin librerías externas.
-* **Despliegue (Hosting):** Vercel conectado directamente a la rama `main` del repositorio privado de GitHub. Cada cambio que se hace en `main` se publica automáticamente en internet en segundos.
+* **JavaScript:** Vanilla JS (ES6+) dentro de un IIFE al final de `index.html`.
+* **Hosting:** Vercel, conectado a la rama `main` de GitHub. Cada push a `main` se publica automáticamente.
+* **Interno, no publicado:** `precios.json`, `actualizar_precios.js`, `proveedor*.txt` y `bot-whatsapp/` usan un esquema anterior y **no alimentan la web**. No usarlos hasta adaptarlos (ver `README.md`).
 
 ---
 
-## 3. Identidad Visual (Estética "Apple Dark Cinematic")
+## 3. Identidad Visual
 
-* **Fondo Principal (`obsidian`):** `#07080B` (negro OLED profundo).
-* **Fondo Secundario (`graphite` / `surface`):** `#111318` / `#151821`.
-* **Acento Dorado (`gold`):** `#D7AA4A` (dorado champán premium).
-* **Efectos:** Tarjetas con efecto cristal (*glassmorphism*) usando `backdrop-blur-xl bg-surface/50 border border-white/10`.
-* **Imágenes de producto:** Renders de estudio de alta definición con fondo transparente, sin marcos blancos ni vectores planos simplistas.
+* **Base clara:** marfil `#F8F8F6` con texto negro `#07080B`.
+* **Acento dorado:** `#D7AA4A`. Sobre fondos claros, el texto dorado usa un tono más oscuro (`--gt-accent: 121 89 28`) para mantener el contraste.
+* **Secciones oscuras:** Plan Canje y el footer usan grafito `#171A20` con la clase `theme-dark`, que redefine las variables `--gt-*`.
+* **Vidrio (*Liquid Glass*):** transparencias, desenfoque y reflejos en la navegación, los controles y el simulador. Las tarjetas mantienen fondos legibles.
+* **Fotos de producto:** van sobre un escenario `.product-stage` con luz cálida inferior y `mix-blend-mode: multiply`, que funde el fondo blanco de los JPG.
+* **Accesibilidad:** WAI-ARIA (pestañas, acordeón, grupo de radio en las píldoras, `aria-live` en precios y simulador), objetivos táctiles de al menos 44 px y modos de transparencia y movimiento reducidos. El contraste AA del simulador se midió en el QA de Antigravity del 17/10/2026.
 
 ---
 
-## 4. Guía de Modificación Rápida de Datos
+## 4. Guía de Modificación Rápida
 
-Todo el contenido dinámico y de configuración se encuentra dentro de la etiqueta `<script>` al final de [`index.html`](file:///C:/Users/villa/OneDrive/Proyects/Golde_Touch/index.html#L710-L850):
+Todo está en el `<script>` final de `index.html`, salvo el catálogo.
 
-### A. Cambiar Teléfono, Instagram u Horarios
-Buscar el bloque `CONFIG`:
+### A. Teléfono, Instagram y horarios
+Bloque `CONFIG`:
 ```javascript
 const CONFIG = {
-  WHATSAPP_NUMBER: '5491125591488', // Formato internacional: 549 + código de área + número (sin espacios ni guiones)
-  INSTAGRAM_URL: 'https://www.instagram.com/goldentouch.ar',
+  WHATSAPP_NUMBER: '5491125591488', // Nunca reemplazarlo por otro número.
+  INSTAGRAM_URL: 'https://www.instagram.com/goldentouch.ar…',
   HORARIOS: 'Lunes a sábado · 10 a 20 h'
 };
 ```
-*(Nota: En el pie de página HTML, línea ~671, también se encuentra el texto visible del teléfono: `+54 9 11 2559-1488`)*.
+El número visible del footer (`+54 9 11 2559-1488`) está escrito en el HTML.
 
-### B. Modificar o Agregar Modelos al Catálogo
-El catálogo se organiza en dos categorías: `sellados` y `seminuevos`.
-Para agregar o editar un modelo, modificar el objeto `CATALOG`:
-```javascript
-{
-  model: 'iPhone 16 Pro Max',
-  conditionBadge: 'Nuevo Sellado', // o 'Seminuevo Seleccionado'
-  image: 'assets/16-pro.png',      // ruta a la imagen en assets/
-  conditionDesc: 'Sellado de fábrica en caja · Garantía escrita',
-  priceRef: 'Desde USD 1.350',     // precio base de referencia
-  installmentRef: 'o en hasta 4 cuotas fijadas',
-  storage: ['256 GB', '512 GB', '1 TB'], // capacidades disponibles
-  colors: [
-    { name: 'Titanio Desierto', hex: '#C4A587' },
-    { name: 'Titanio Natural', hex: '#9E968D' },
-    { name: 'Titanio Blanco', hex: '#E3E4E5' },
-    { name: 'Titanio Negro', hex: '#3C3B37' }
-  ]
-}
-```
-* **Muestras de color interactivas:** Al hacer clic en un color dentro de la tarjeta, el botón de WhatsApp se actualiza dinámicamente para enviar la consulta con el color exacto seleccionado por el usuario.
+### B. Catálogo y precios
+* Los modelos, variantes, colores, fotos, precios y disponibilidad salen de `assets/catalogo.js`, generado por el proceso interno. **Los precios de venta no se escriben en `index.html`.** La única excepción son los rangos de toma del simulador (`TRADE_IN`, ver C).
+* `renderCatalogCard` arma cada tarjeta:
+  * **Píldoras por variante:** capacidad, batería y SIM arriba, precio abajo. Las listas de batería se muestran como rango («87–89%»). Si dos variantes coinciden en etiqueta y precio, se agrega «Opción N».
+  * **Círculos de color:** tocar uno cambia la foto, el precio y la disponibilidad. Los colores tachados están agotados o no figuran en la lista para esa variante: se puede ver su foto, pero el botón de consulta se deshabilita.
+  * **Un único botón «Cotizar por WhatsApp»:** el mensaje lleva modelo, condición, capacidad, batería, SIM, color, precio de referencia y la referencia pública `GT-…`.
 
-### C. Mensajes Predefinidos de WhatsApp
-En el objeto `MESSAGES`:
-```javascript
-const MESSAGES = {
-  general: 'Hola Golden Touch! Quiero cotizar un iPhone.',
-  canje: 'Hola Golden Touch! Quiero cotizar mi iPhone actual para Plan Canje. Modelo: ___ · Capacidad: ___ · Batería: ___%',
-  modelo: (model, tipo, color) => `Hola Golden Touch! Quiero consultar por el ${model} (${tipo})${color ? ' en color ' + color : ''}. ¿Qué disponibilidad y cotización tienen?`
-};
-```
+### C. Simulador de Plan Canje (`#simulador-canje`)
+* Rangos de toma en la constante `TRADE_IN` (USD, aprobados el 16/10/2026). Para cambiarlos, editar ahí y registrar la decisión en `ESTADO_EQUIPO.md`.
+* El precio del equipo nuevo es el «desde» del catálogo: la oferta no agotada más barata del modelo.
+* Diferencia = precio desde del nuevo − máximo de toma, con un mínimo de 0. **Nunca se promete un valor cerrado ni un saldo a favor.**
+* Los textos del resultado, la leyenda legal y el mensaje de WhatsApp son literales aprobados: no reformularlos sin autorización.
+
+### D. Botón flotante de WhatsApp (`#wa-float`)
+* El badge se calcula con la zona `America/Argentina/Buenos_Aires` y se recalcula cada minuto: de lunes a sábado de 10 a 20 h muestra «🟢 En línea · Canning»; fuera de ese horario, «🌙 Dejanos tu consulta · Canning».
+* Si cambia el horario comercial, actualizar `updateWaBadge` y `CONFIG.HORARIOS`.
+
+### E. Mensajes predefinidos de WhatsApp
+Objeto `MESSAGES` (`general`, `canje`, `modelo`), aplicado a todo enlace con `data-wa="…"`.
 
 ---
 
 ## 5. Estructura de Secciones de la Landing
 
-1. **Header / Navbar:** Logo oficial, navegación de anclaje accesible y botón directo de cotización por WhatsApp (con texto responsivo "Cotizar" en móvil y "Cotizar por WhatsApp" en escritorio).
-2. **Hero:** Título de alto impacto, propuesta de valor, badges de confianza e imagen destacada del iPhone 16 Pro Max.
-3. **Plan Canje:** Proceso transparente en 3 pasos (1. Datos del equipo, 2. Cotización justa de mercado, 3. Revisión física y entrega con traspaso de datos).
-4. **Catálogo Interactivo:** Pestañas accesibles (WAI-ARIA) para alternar entre "Nuevos Sellados" y "Seminuevos Seleccionados", con selectores de color interactivos y nota legal de stock rotativo.
-5. **Transparencia y Garantía:** Protocolo de 6 puntos de control técnico (TrueTone, Face ID, cámaras, iCloud libre, procedencia legítima y comprobante) junto con la tarjeta de garantía legal (3 meses seminuevos, 6 meses sellados según Ley 24.240).
-6. **Entregas y Seguridad:** 4 tarjetas con los pilares logísticos en Canning (puntos comerciales acordados, revisión conjunta, migración asistida y pagos seguros).
-7. **Preguntas Frecuentes:** Acordeón con animación suave que resuelve dudas sobre compras por pedido, medios de pago, batería real, garantía y entregas.
-8. **Footer Institucional:** Datos de contacto, navegación, aviso legal sobre marcas registradas de Apple Inc. y enlace a Defensa del Consumidor.
+1. **Header flotante:** logo, navegación de anclaje y botón «Cotizar por WhatsApp».
+2. **Presentación (`#inicio`):** propuesta de valor, insignias de confianza e imagen del iPhone 16 Pro Max.
+3. **Catálogo (`#catalogo`):** selector de familias fijo al hacer scroll; pestañas Nuevos sellados / Seminuevos / Open box; buscador; tarjetas con píldoras.
+4. **Plan Canje (`#plan-canje`, oscura):** proceso en 3 pasos y simulador interactivo.
+5. **Transparencia y garantía (`#garantia`):** protocolo de 6 puntos de control y la garantía legal.
+6. **Entregas y seguridad (`#zona`):** 4 pilares logísticos. *(La Tarea 3, zona de entrega, está en pausa hasta que Elías confirme si se mencionan barrios privados.)*
+7. **Preguntas frecuentes (`#faq`):** acordeón.
+8. **Footer (oscuro):** contacto, navegación y avisos legales.
+9. **Botón flotante de WhatsApp:** fijo abajo a la derecha en toda la página.
 
 ---
 
-## 6. Reglas Legales y Comerciales de Golden Touch
+## 6. Reglas Legales y Comerciales
 
-1. **Cumplimiento de la Ley 24.240 (Defensa del Consumidor en Argentina):**
-   * Seminuevos / usados: Garantía legal mínima obligatoria de **3 meses**.
-   * Nuevos sellados: Garantía de fábrica mínima de **6 meses**.
-2. **Financiación y Precios:**
-   * Los precios se indican como valores de referencia en USD o ARS al tipo de cambio del día.
-   * No usar frases engañosas como "cuotas fijas en pesos sin interés". Se utiliza la fórmula *"Desde X cuotas fijadas"* o *"Planes a medida"* aclarando que el costo financiero se define según el medio de pago.
-3. **Modalidad de Venta:**
-   * Stock rotativo y venta principalmente **por pedido**, lo que permite ofrecer cotizaciones competitivas sin sobrecostos de almacenamiento.
-4. **Independencia de Marca:**
-   * Golden Touch comercializa de forma independiente equipos Apple originales. En el pie de página se incluye el disclaimer legal correspondiente.
+1. **Ley 24.240 (Defensa del Consumidor):** garantía mínima de 3 meses en seminuevos y 6 meses en sellados.
+2. **Precios:** son referencias de contado en USD; la disponibilidad se confirma al cotizar. Nunca usar «cuotas sin interés»: se habla de «hasta 4 cuotas» o «planes a medida», informando el costo financiero al cotizar.
+3. **Plan Canje:** siempre rangos orientativos, con la leyenda de que el valor final se ratifica en la inspección física en mano.
+4. **Stock rotativo:** venta principalmente por pedido.
+5. **Independencia de marca:** Golden Touch comercializa equipos Apple originales de forma independiente; el disclaimer está en el footer.
+6. **Datos internos:** nunca exponer costos, márgenes ni nombres de proveedores en archivos públicos.
 
 ---
 
 ## 7. Cómo Publicar Cambios
 
-Cualquier cambio realizado en los archivos se publica en producción ejecutando en la terminal:
+1. Probar en local (por ejemplo, `python -m http.server 5173` y abrir `http://127.0.0.1:5173`).
+2. Revisión: Codex revisa el diff y Antigravity hace el QA visual (ver `ESTADO_EQUIPO.md`).
+3. **Solo con el OK explícito del usuario o de Elías**, Antigravity hace el commit (agregando los archivos por nombre, nunca con `git add .`) y el push a `main`.
+4. Vercel publica en menos de un minuto. Verificar el sitio en vivo y registrar el resultado en la bitácora.
 
-```bash
-git add .
-git commit -m "Ajuste de precios y modelos"
-git push origin main
-```
-*Vercel detecta automáticamente el push y actualiza la web en menos de 30 segundos.*
+Elías también puede publicar desde su Mac con `guardar_cambios.command`. Ese script hace `git add .`, así que antes conviene revisar que no haya archivos internos nuevos sin ignorar.

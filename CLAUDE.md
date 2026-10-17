@@ -17,7 +17,8 @@ Antigravity y OpenAI Codex actúan como tu **equipo de soporte, revisión técni
 
 ## 2. Estructura de Archivos del Proyecto
 
-- `index.html`: Landing page principal (Tailwind CSS, diseño Apple Dark / Liquid Glass, WAI-ARIA accesible).
+- `index.html`: Landing page principal (Tailwind CSS; base marfil con acentos dorados, Plan Canje y footer en grafito, acabado Liquid Glass; WAI-ARIA accesible).
+- `MANUAL_PROYECTO_IA.md`: guía técnica y de negocio actualizada (cómo modificar catálogo, simulador, badge, etc.).
 - `assets/catalogo.js`: Catálogo oficial estructurado en `window.GOLDEN_TOUCH_CATALOG` con grupos (`sellados`, `seminuevos`, `openbox`) y familias (`watch`, `mac`, `ipad`, `audio`, `gaming`, `accesorios`).
 - `assets/liquid-glass.css`: Estilos de acabado de vidrio esmerilado, header flotante y ambient lighting.
 - `assets/productos/`: Catálogo de 63+ imágenes oficiales de productos.
@@ -30,13 +31,13 @@ Antigravity y OpenAI Codex actúan como tu **equipo de soporte, revisión técni
 
 ## 3. Hoja de Ruta Inmediata (Tareas Aprobadas)
 
-### ✅ Tarea 1: Tarjetas de Catálogo Estilo Apple Store (en `index.html` -> `renderCatalogCard`)
+### ✅ Tarea 1: Tarjetas de Catálogo Estilo Apple Store (en `index.html` -> `renderCatalogCard`) · 🟢 Publicada (`a2af4d3`)
 1. Reemplazar el menú desplegable `<select>` de capacidades por **Píldoras Interactivas** (`[ 128 GB ]`, `[ 256 GB ]`, `[ 512 GB ]`).
 2. Al tocar una píldora, actualizar dinámicamente el precio, la foto del equipo y la disponibilidad de colores.
 3. Círculos de colores (*swatches*) con tamaño táctil mejorado y aro dorado (`ring-2 ring-accent`) al estar seleccionados.
 4. Unificar la acción en un **único botón principal** `.btn-gold` que diga: **"Cotizar por WhatsApp"**, con mensaje pre-cargado que detalle modelo, capacidad y color elegido.
 
-### ✅ Tarea 2: Simulador Interactivo de Plan Canje (en `index.html` -> `#plan-canje`)
+### ✅ Tarea 2: Simulador Interactivo de Plan Canje (en `index.html` -> `#plan-canje`) · 🟢 Publicada (`a2af4d3`)
 1. Crear una calculadora interactiva con diseño Liquid Glass:
    - Selector de equipo actual (iPhone 11 hasta iPhone 15 Pro Max).
    - Selector de equipo al que quiere subir.
@@ -46,13 +47,13 @@ Antigravity y OpenAI Codex actúan como tu **equipo de soporte, revisión técni
 ### ⏸️ Tarea 3: Zona de Entrega (EN PAUSA)
 - En pausa a la espera de confirmación de Elías sobre menciones explícitas de barrios privados.
 
-### ✅ Tarea 4: Botón Flotante de WhatsApp & Pulido Visual
+### ✅ Tarea 4: Botón Flotante de WhatsApp & Pulido Visual · 🟢 Publicada (`a2af4d3`)
 1. Botón flotante permanente (fixed `bottom-6 right-6 z-50`) con ícono de WhatsApp, badge *"En línea · Canning"* y enlace a la línea comercial oficial.
 2. Pulido de *ambient rim light* en `assets/liquid-glass.css` para realzar las imágenes de los productos.
 
 ---
 
-> 📋 El estado vivo de cada tarea, las decisiones aprobadas, los modelos de cada agente y la bitácora están en **`ESTADO_EQUIPO.md`**. ✅ significa «aprobada para hacer», no «terminada».
+> 📋 El estado vivo de cada tarea, las decisiones aprobadas, los modelos de cada agente y la bitácora están en **`ESTADO_EQUIPO.md`**. ✅ significa «aprobada para hacer»; 🟢 significa «publicada en producción».
 
 ## 4. División de Roles del Equipo
 

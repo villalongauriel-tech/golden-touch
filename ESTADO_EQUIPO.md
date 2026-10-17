@@ -36,11 +36,11 @@ Invocación desde la terminal:
 
 | Tarea | Estado | Responsable actual |
 |---|---|---|
-| 1 · Tarjetas estilo Apple Store (píldoras, swatches, CTA único) | 🟢 Revisada (Codex) y con QA OK (Antigravity) · sin commit | — |
-| 2 · Simulador Plan Canje | 🟢 Revisada (Codex) y con QA OK (Antigravity) · sin commit | — |
+| 1 · Tarjetas estilo Apple Store (píldoras, swatches, CTA único) | 🟢 Publicada (`a2af4d3`) | — |
+| 2 · Simulador Plan Canje | 🟢 Publicada (`a2af4d3`) | — |
 | 3 · Zona de entrega | ⏸️ En pausa (esperando a Elías) | — |
-| 4 · Botón flotante WhatsApp + rim light | 🟢 Revisada (Codex) y con QA OK (capturas de Antigravity + verificación de Claude) · sin commit | — |
-| Publicación (push a `main`) | 🟡 Aprobada por el usuario · en curso | Antigravity (`gemini-3.8-flash-high`) |
+| 4 · Botón flotante WhatsApp + rim light | 🟢 Publicada (`a2af4d3`) | — |
+| Publicación (push a `main`) | 🟢 Publicada · commit `a2af4d3` (2026-10-17) · verificada por Antigravity y Claude | — |
 
 ## 4. Decisiones aprobadas por el usuario (16/10/2026)
 
@@ -70,7 +70,8 @@ Invocación desde la terminal:
 
 ## 5. Pendientes y observaciones abiertas
 
-- `MANUAL_PROYECTO_IA.md` describe el diseño oscuro anterior y el objeto `CATALOG`, que ya no existe.
+- Tarea 3 (zona de entrega): en pausa hasta que Elías confirme si se mencionan barrios privados.
+- Más adelante: limpiar del historial de git los costos de `precios.json` (decisión del usuario, sin fecha).
 
 ## 6. Bitácora
 
@@ -92,3 +93,7 @@ Formato: `AAAA-MM-DD · Agente (modelo) · qué se hizo · resultado / próximo 
 - 2026-10-17 · Antigravity (gemini-4-argon-high) · La segunda corrida también se cortó por timeout (10 min) sin informe escrito, pero dejó 21 capturas en `~/.gemini/antigravity-cli/brain/5a6a4a65-…/scratch/`.
 - 2026-10-17 · Claude Code (Opus 5.5) · Revisé esas capturas. Rim light sin rectángulos blancos en JPG ni PNG, las dos variantes del badge OK (11 h «🟢 En línea», 21 h «🌙 Dejanos tu consulta»), simulador OK. Dos problemas en 390 px, ya corregidos: (1) el botón flotante tapaba la última línea del aviso legal del footer → `padding-bottom: 7.5rem` en el footer; (2) el texto de «Validar cotización por WhatsApp» quedaba alineado a la izquierda al partirse → `text-center`. Verificado con puppeteer: el botón queda 38 px por debajo del último texto, outline de foco `solid 3px`, 0 errores de consola. Tarea 4 cerrada. Las Tareas 1, 2 y 4 están listas para el push cuando el usuario lo apruebe.
 - 2026-10-17 · Usuario · Aprobó el push a `main` y excluir `CLAUDE.md`, `README.md` y `MANUAL_PROYECTO_IA.md` del despliegue. Claude agregó los tres a `.vercelignore` (siguen en GitHub; solo dejan de servirse en el sitio). El commit y el push quedan a cargo de Antigravity (`gemini-3.8-flash-high`).
+- 2026-10-17 · Antigravity (gemini-3.8-flash-high) · Commit a2af4d3 y push a `main`. Deploy verificado en producción (https://golden-touch-five.vercel.app/): 'simulador-canje' y 'wa-float' presentes (200 OK); /CLAUDE.md y /ESTADO_EQUIPO.md protegidos (404 Not Found).
+- 2026-10-17 · Claude Code (Opus 5.5) · Documentación sincronizada con lo publicado: `MANUAL_PROYECTO_IA.md` reescrito (arquitectura actual, identidad marfil/dorado/grafito, cómo modificar el catálogo, el simulador y el badge, orden de secciones y flujo de publicación); en `CLAUDE.md`, la descripción del diseño corregida y las Tareas 1, 2 y 4 marcadas como 🟢 publicadas; en `README.md`, eliminadas las referencias a la UI y al manual anteriores. Ninguno de estos archivos se publica en el sitio (`.vercelignore`). Sin commit: esperando el OK del usuario.
+- 2026-10-17 · Codex (gpt-6-luna, medium) · Chequeo de la documentación contra el código: nombres, IDs, orden de secciones y exclusiones OK. Encontró 6 imprecisiones; Claude corrigió 4 (precios en `index.html`, colores tachados, alcance del contraste AA, «referencia de proveedor» en el README). Las 2 de `CLAUDE.md` (líneas 35 y 44) son el texto original de la hoja de ruta aprobada y se dejan como están. Sin commit: esperando el OK del usuario.
+- 2026-10-17 · Usuario · Aprobó el commit y el push de la documentación. Tarea 3: Elías todavía no respondió sobre los barrios privados; sigue en pausa.
