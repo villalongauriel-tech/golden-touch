@@ -94,7 +94,7 @@ Objeto `MESSAGES` (`general`, `canje`, `modelo`), aplicado a todo enlace con `da
 3. **Catálogo (`#catalogo`):** selector de familias fijo al hacer scroll; pestañas Nuevos sellados / Seminuevos / Open box; buscador; tarjetas con píldoras.
 4. **Plan Canje (`#plan-canje`, oscura):** proceso en 3 pasos y simulador interactivo.
 5. **Transparencia y garantía (`#garantia`):** protocolo de 6 puntos de control y la garantía legal.
-6. **Entregas y seguridad (`#zona`):** 4 pilares logísticos. *(La Tarea 3, zona de entrega, está en pausa hasta que Elías confirme si se mencionan barrios privados.)*
+6. **Entregas y envíos (`#zona`):** Entregas en mano en puntos comerciales y seguros de Canning y alrededores (nodo principal), San Vicente y Ezeiza; y envíos asegurados a todo el país con opción de pago del flete en destino por Vía Cargo.
 7. **Preguntas frecuentes (`#faq`):** acordeón.
 8. **Footer (oscuro):** contacto, navegación y avisos legales.
 9. **Botón flotante de WhatsApp:** fijo abajo a la derecha en toda la página.

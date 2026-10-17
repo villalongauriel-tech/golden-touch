@@ -38,7 +38,7 @@ Invocación desde la terminal:
 |---|---|---|
 | 1 · Tarjetas estilo Apple Store (píldoras, swatches, CTA único) | 🟢 Publicada (`a2af4d3`) | — |
 | 2 · Simulador Plan Canje | 🟢 Publicada (`a2af4d3`) | — |
-| 3 · Zona de entrega | ⏸️ En pausa (esperando a Elías) | — |
+| 3 · Entregas y Envíos (Canning, San Vicente, Ezeiza + Envíos país) | 🟢 Publicada | Antigravity |
 | 4 · Botón flotante WhatsApp + rim light | 🟢 Publicada (`a2af4d3`) | — |
 | Publicación (push a `main`) | 🟢 Publicada · commit `a2af4d3` (2026-10-17) · verificada por Antigravity y Claude | — |
 
@@ -61,6 +61,11 @@ Invocación desde la terminal:
 - Leyenda obligatoria: «* Cotización preliminar orientativa según batería y estado estético. El valor final se ratifica tras la inspección física en mano.»
 - Mensaje de WhatsApp: «Hola Golden Touch! Hice la simulación de Plan Canje en la web entregando mi [Modelo Actual] por un [Modelo Nuevo]. La diferencia estimada fue de aprox. USD [Diferencia]. ¿Me confirman cotización para coordinar?»
 
+**Tarea 3 · Entregas y Envíos** (decisión del 17/10/2026)
+- Puntos presenciales en mano: Canning y alrededores (nodo principal), San Vicente y Ezeiza (solo «Ezeiza»). Puntos comerciales y seguros acordados, sin nombrar barrios privados.
+- Envíos a todo el país: cobertura a cualquier provincia con número de seguimiento en tiempo real y embalaje de alta seguridad.
+- Encomiendas por Vía Cargo: el flete/costo del envío se abona recién en destino al recibir o retirar el paquete. El equipo se abona por transferencia previa.
+
 **Tarea 4 · Botón flotante** (decisión actualizada el 17/10/2026)
 - Ícono de WhatsApp más el texto fijo «Dejanos tu consulta», sin horario, sin «Canning» y sin emojis. Reemplaza al badge por horario («🟢 En línea · Canning» / «🌙 Dejanos tu consulta · Canning»).
 
@@ -69,7 +74,6 @@ Invocación desde la terminal:
 
 ## 5. Pendientes y observaciones abiertas
 
-- Tarea 3 (zona de entrega): en pausa hasta que Elías confirme si se mencionan barrios privados.
 - Más adelante: limpiar del historial de git los costos de `precios.json` (decisión del usuario, sin fecha).
 
 ## 6. Bitácora
@@ -100,3 +104,5 @@ Formato: `AAAA-MM-DD · Agente (modelo) · qué se hizo · resultado / próximo 
 - 2026-10-17 · Usuario · Le mandó a Elías la consulta por los barrios privados (Tarea 3). Cambió el botón flotante: solo ícono + «Dejanos tu consulta».
 - 2026-10-17 · Claude Code (Opus 5.5) · Botón flotante actualizado: texto fijo «Dejanos tu consulta», `aria-label` «Dejanos tu consulta por WhatsApp»; se eliminó `updateWaBadge` y su intervalo. Manual y `CLAUDE.md` actualizados. Sin commit: esperando el OK del usuario.
 - 2026-10-17 · Usuario · Aprobó el commit y el push del cambio del botón flotante.
+- 2026-10-17 · Antigravity (gemini-3.8-flash-high) · Commit `aad6e41` y push a `main` del botón flotante con texto fijo.
+- 2026-10-17 · Antigravity (gemini-3.8-flash-high) · Tarea 3 implementada en `index.html` (#zona, menús de navegación y FAQ 5). Cobertura presencial en Canning y alrededores (punto principal), San Vicente y Ezeiza; envíos asegurados a todo el país con opción de pago en destino vía Vía Cargo. Commit y push a `main` tras el OK explícito del usuario.
