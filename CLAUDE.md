@@ -52,6 +52,8 @@ Antigravity y OpenAI Codex actúan como tu **equipo de soporte, revisión técni
 
 ---
 
+> 📋 El estado vivo de cada tarea, las decisiones aprobadas, los modelos de cada agente y la bitácora están en **`ESTADO_EQUIPO.md`**. ✅ significa «aprobada para hacer», no «terminada».
+
 ## 4. División de Roles del Equipo
 
 - **Claude Code (Vos):** Edición de código, diseño de componentes en `index.html`, maquetado CSS y JavaScript.

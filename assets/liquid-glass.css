@@ -110,7 +110,72 @@ body .theme-dark .glass-card {
 }
 #catalogo .color-swatch { transition: transform .22s var(--glass-ease), box-shadow .22s; }
 #catalogo .color-swatch[aria-pressed="true"] { transform: scale(1.1); }
+/* Simulador de Plan Canje: vidrio oscuro sobre grafito con un reflejo dorado suave. */
+.trade-sim {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #D7AA4A4D;
+  background: linear-gradient(150deg, #2E333DF2, #1D2027E6);
+  box-shadow: inset 0 1px 0 #FFFFFF14, inset 0 0 0 1px #FFFFFF08, 0 24px 60px #00000033;
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  backdrop-filter: blur(24px) saturate(140%);
+}
+.trade-sim::before {
+  content: '';
+  position: absolute;
+  top: -45%;
+  right: -15%;
+  width: 65%;
+  height: 130%;
+  background: radial-gradient(closest-side, #D7AA4A1F, transparent);
+  pointer-events: none;
+}
+.trade-sim > * { position: relative; }
+.trade-select { color-scheme: dark; cursor: pointer; }
+.trade-result {
+  border: 1px solid #FFFFFF1A;
+  background: linear-gradient(160deg, #FFFFFF10, #FFFFFF05);
+  box-shadow: inset 0 1px 0 #FFFFFF14;
+}
+/* Ambient rim light de las fotos: luz cálida desde abajo y un borde de luz interior.
+   Las fotos son JPG con fondo blanco: multiply funde ese blanco con el escenario, sin recortes visibles. */
+body .product-stage {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 100%, #D7AA4A1C, transparent 70%),
+    radial-gradient(ellipse 80% 60% at 50% 0%, #FFFFFF, transparent 75%),
+    linear-gradient(180deg, #FFFFFF, #F5F4F0);
+  box-shadow: inset 0 1px 0 #FFF, inset 0 0 0 1px #171A2009, inset 0 -22px 34px -26px #D7AA4A59;
+  transition: box-shadow .35s var(--glass-ease);
+}
+body .product-stage img { mix-blend-mode: multiply; transition: transform .45s var(--glass-ease); }
+/* Botón flotante de WhatsApp: vidrio claro, legible sobre secciones claras y oscuras. */
+body .wa-float {
+  bottom: max(1.5rem, calc(env(safe-area-inset-bottom) + .75rem));
+  right: max(1.5rem, calc(env(safe-area-inset-right) + .75rem));
+  border: 1px solid #FFFFFFE0;
+  background: linear-gradient(135deg, #FFFFFFEB, #F8F8F6D6);
+  box-shadow: inset 0 1px 0 #FFF, 0 0 0 1px #171A200D, 0 12px 32px #171A2024;
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+  transition: transform .3s var(--glass-ease), box-shadow .3s var(--glass-ease);
+}
+/* Espacio al pie para que el botón flotante no tape el aviso legal al final del footer. */
+body footer.theme-dark { padding-bottom: 7.5rem; }
+/* Foco de teclado propio: la sombra del hover no puede taparlo. */
+body .wa-float:focus-visible { outline: 3px solid #D7AA4A; outline-offset: 3px; }
+.wa-float__icon {
+  background: linear-gradient(150deg, #3BE07A, #1FAF55);
+  box-shadow: inset 0 1px 0 #FFFFFF55, 0 4px 10px #1FAF5540;
+}
+@media (max-width: 379px) {
+  body .wa-float { padding-right: 8px; }
+  #wa-float-badge { display: none; }
+}
 @media (hover: hover) and (pointer: fine) {
+  body .glass-card:hover .product-stage { box-shadow: inset 0 1px 0 #FFF, inset 0 0 0 1px #D7AA4A33, inset 0 -26px 40px -24px #D7AA4A80; }
+  body .glass-card:hover .product-stage img { transform: scale(1.03); }
+  body .wa-float:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 #FFF, 0 0 0 1px #D7AA4A55, 0 16px 36px #171A202E; }
   body .glass-card:hover { transform: translateY(-3px); box-shadow: inset 0 1px 0 #FFF, 0 0 0 1px #D7AA4A55, 0 18px 38px #171A2010; }
   body .btn-gold:hover { box-shadow: inset 0 1px 0 #FFF, 0 8px 22px #79591C22; }
   body .btn-card:hover { background: linear-gradient(145deg, #F4E6C7, #E6C77F); }
@@ -129,9 +194,13 @@ body .theme-dark .glass-card {
   #site-header, #site-header.is-scrolled, .catalog-families { background: #F8F8F6; backdrop-filter: none; -webkit-backdrop-filter: none; border-color: #A6A8AE; }
   body .glass-card { background: #FFF; border-color: #A6A8AE; }
   body .theme-dark .glass-card { background: #21252D; border-color: #A6A8AE; }
+  .trade-sim { background: #21252D; backdrop-filter: none; -webkit-backdrop-filter: none; border-color: #A6A8AE; }
+  .trade-sim::before { display: none; }
+  .trade-result { background: #2A2E37; border-color: #A6A8AE; }
+  body .wa-float { background: #FFF; backdrop-filter: none; -webkit-backdrop-filter: none; border-color: #A6A8AE; }
 }
 @media (prefers-reduced-motion: reduce) {
   html, body { scroll-behavior: auto !important; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  body .glass-card:hover, #catalogo .color-swatch[aria-pressed="true"] { transform: none; }
+  body .glass-card:hover, #catalogo .color-swatch[aria-pressed="true"], body .glass-card:hover .product-stage img, body .wa-float:hover { transform: none; }
 }

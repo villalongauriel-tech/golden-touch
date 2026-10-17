@@ -8,5 +8,10 @@ proveedor1.txt
 proveedor2.txt
 precios.json
 guardar_cambios.command
+ESTADO_EQUIPO.md
+AGENTS.md
+CLAUDE.md
+README.md
+MANUAL_PROYECTO_IA.md
 .env*
 node_modules/

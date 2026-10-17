@@ -192,6 +192,12 @@
     .color-swatch[data-status="agotado"]::before, .color-swatch[data-status="no_listado"]::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(135deg, transparent 44%, #FFF 44%, #FFF 48%, #171A20 48%, #171A20 54%, #FFF 54%, #FFF 58%, transparent 58%); }
     .stock-label { font-size: 11px; color: #565A61; }
     .stock-label[data-status="agotado"] { text-decoration: line-through; }
+    /* Píldoras de variante: capacidad (y batería/SIM) arriba, precio abajo. */
+    .variant-pill { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-height: 48px; padding: 7px 16px; border: 1px solid #D8DADD; border-radius: 9999px; background: #FFF; color: #07080B; font-size: 13px; font-weight: 800; line-height: 1.2; text-align: center; transition: border-color .2s, background-color .2s, box-shadow .2s; }
+    .variant-pill:hover { border-color: #D7AA4A; }
+    .variant-pill[aria-checked="true"] { border-color: #D7AA4A; background: #D7AA4A14; box-shadow: 0 0 0 2px rgb(var(--gt-accent)); }
+    .variant-pill:focus-visible { outline: 3px solid #D7AA4A; outline-offset: 3px; }
+    .variant-pill__price { margin-top: 2px; font-size: 11px; font-weight: 600; color: #565A61; }
     @media (max-width: 639px) {
       #catalogo [role="tablist"] { width: 100%; border-radius: 20px; }
       #catalogo [role="tab"] { flex: 1; padding: 10px 12px; border-radius: 16px; }
@@ -515,18 +521,51 @@
           </li>
         </ol>
 
-        <!-- CTA & Callout de Privacidad -->
-        <div class="mt-12 flex flex-col items-start justify-between gap-6 rounded-3xl border border-gold/30 bg-surface p-8 sm:flex-row sm:items-center">
-          <div>
-            <h3 class="text-lg font-extrabold text-ink">¿Querés saber cuánto vale tu iPhone hoy?</h3>
-            <p class="mt-1 text-sm text-muted">Te cotizamos en minutos con atención personalizada por WhatsApp.</p>
+        <!-- Simulador de Plan Canje: rangos orientativos, nunca un valor cerrado -->
+        <div id="simulador-canje" class="trade-sim mt-12 rounded-3xl p-6 sm:p-10">
+          <div class="max-w-2xl">
+            <p class="eyebrow-badge">Simulador</p>
+            <h3 id="sim-title" class="mt-4 text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">¿Cuánto vale tu iPhone hoy?</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">Elegí tu equipo actual y el que querés. Te mostramos un rango estimado al instante.</p>
           </div>
-          <a data-wa="canje" href="#" class="btn-gold shrink-0">Cotizar mi Plan Canje</a>
-        </div>
 
-        <p class="mt-4 text-xs text-muted">
-          * La cotización previa es orientativa; el valor final de toma se ratifica tras la inspección física del equipo y su funcionamiento.
-        </p>
+          <div class="mt-8 grid gap-6 lg:grid-cols-2 lg:gap-10">
+            <div class="grid content-start gap-5" role="group" aria-labelledby="sim-title">
+              <div>
+                <label for="sim-actual" class="block text-sm font-semibold text-ink">1. Tu iPhone actual</label>
+                <select id="sim-actual" class="trade-select mt-2 min-h-[48px] w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"></select>
+              </div>
+              <div>
+                <label for="sim-nuevo" class="block text-sm font-semibold text-ink">2. El iPhone que querés</label>
+                <select id="sim-nuevo" class="trade-select mt-2 min-h-[48px] w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"></select>
+              </div>
+              <a data-wa="canje" href="#" class="text-sm font-semibold text-accent underline underline-offset-4">¿Tu modelo no está en la lista? Cotizalo por WhatsApp</a>
+            </div>
+
+            <div class="trade-result rounded-2xl p-6">
+              <dl class="grid gap-4" aria-live="polite">
+                <div>
+                  <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Valor estimado de toma</dt>
+                  <dd id="sim-toma" class="mt-1 text-lg font-extrabold text-ink">—</dd>
+                </div>
+                <div>
+                  <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Precio del nuevo (contado)</dt>
+                  <dd id="sim-precio" class="mt-1 text-lg font-extrabold text-ink">—</dd>
+                </div>
+                <div class="border-t border-line pt-4">
+                  <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Diferencia estimada a abonar</dt>
+                  <dd id="sim-diferencia" class="mt-1 text-3xl font-extrabold tracking-tight text-accent">—</dd>
+                  <dd id="sim-nota" class="mt-2 text-xs leading-relaxed text-muted">Elegí los dos equipos para ver la diferencia estimada.</dd>
+                </div>
+              </dl>
+              <a id="sim-cta" class="btn-gold mt-6 w-full text-center" aria-disabled="true">Validar cotización por WhatsApp</a>
+            </div>
+          </div>
+
+          <p class="mt-6 text-xs leading-relaxed text-muted">
+            * Cotización preliminar orientativa según batería y estado estético. El valor final se ratifica tras la inspección física en mano.
+          </p>
+        </div>
 
       </div>
     </section>
@@ -860,6 +899,14 @@
     </div>
   </footer>
 
+  <!-- ============ I. BOTÓN FLOTANTE DE WHATSAPP ============ -->
+  <a id="wa-float" data-wa="general" href="https://wa.me/5491125591488" class="wa-float fixed bottom-6 right-6 z-50 inline-flex min-h-[56px] items-center gap-3 rounded-full py-2 pl-2 pr-5 text-sm font-bold text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="Escribinos por WhatsApp · En línea · Canning">
+    <span class="wa-float__icon grid h-10 w-10 shrink-0 place-items-center rounded-full text-white" aria-hidden="true">
+      <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.41 0-2.81-.36-4.04-1.06l-.29-.17-3.11.82.83-3.03-.19-.3a8.17 8.17 0 0 1-1.25-4.49c0-4.54 3.7-8.24 8.24-8.24m4.54 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.61c.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29"/></svg>
+    </span>
+    <span id="wa-float-badge" aria-hidden="true">🟢 En línea · Canning</span>
+  </a>
+
   <!-- ============ JAVASCRIPT DINÁMICO ============ -->
   <script src="assets/catalogo.js"></script>
   <script>
@@ -908,11 +955,30 @@
         return node;
       };
 
+      const disableLink = (link, disabled) => {
+        if (disabled) { link.removeAttribute('href'); link.setAttribute('aria-disabled', 'true'); link.tabIndex = -1; }
+        else { link.removeAttribute('aria-disabled'); link.removeAttribute('tabindex'); }
+      };
+
       /* Cada opción conserva su capacidad, batería, color y precio. */
       const money = (amount) => typeof amount === 'number' && Number.isFinite(amount) ? `USD ${amount.toLocaleString('es-AR')}` : 'Precio a consultar';
       const stockText = { disponible: 'Disponible por pedido', agotado: 'Agotado', a_confirmar: 'A confirmar', no_listado: 'Sin disponibilidad confirmada' };
       const stockOf = option => option?.availability?.status || 'a_confirmar';
       const specText = specs => Object.entries(specs || {}).map(([key,value]) => ({ ram: `${value} RAM`, cpu: `${value} CPU`, gpu: `${value} GPU` }[key] || value)).join(' · ');
+      /* "87%,88%,89%" → "87–89%"; "+94%" queda igual; textos sin número no se muestran en la píldora. */
+      const batteryText = battery => {
+        if (!battery || !/\d/.test(battery)) return '';
+        const values = battery.split(',').map(s => s.trim()).filter(Boolean);
+        if (values.length < 2) return values[0];
+        const numbers = values.map(s => parseInt(s.replace(/\D/g, ''), 10));
+        return `${Math.min(...numbers)}–${Math.max(...numbers)}%`;
+      };
+      const variantLabel = v => [v.storage, v.specs?.ram && `${v.specs.ram} RAM`, v.specs?.conexion, v.specs?.correa, batteryText(v.battery), v.sim && 'SIM'].filter(Boolean).join(' · ');
+      const variantPrice = v => {
+        if (typeof v.priceUSD !== 'number') return '';
+        const varies = v.colors.some(c => typeof c.priceUSD === 'number' && c.priceUSD !== v.priceUSD);
+        return `${varies ? 'Desde ' : ''}${money(v.priceUSD)}`;
+      };
       let cardCount = 0;
       const renderCatalogCard = (item) => {
         const li = createEl('li');
@@ -920,7 +986,7 @@
         const card = createEl('article', 'glass-card flex h-full flex-col p-6 sm:p-7 overflow-hidden');
         card.appendChild(createEl('span', 'self-start rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-bold text-accent', item.conditionBadge));
         const figure = createEl('figure', 'my-6');
-        const frame = createEl('div', 'flex h-56 items-center justify-center rounded-2xl bg-white overflow-hidden');
+        const frame = createEl('div', 'product-stage flex h-56 items-center justify-center rounded-2xl bg-white overflow-hidden');
         const img = createEl('img', 'h-full max-w-full object-contain p-3');
         img.loading = 'lazy'; img.decoding = 'async';
         const fallback = createEl('p', 'px-5 text-center text-sm text-muted', 'Imagen pendiente. Consultanos por una foto de este equipo.');
@@ -930,20 +996,37 @@
         const caption = createEl('figcaption', 'mt-2 text-center text-xs text-muted');
         frame.append(img, fallback); figure.append(frame, caption);
         card.append(figure, createEl('h3', 'text-xl font-extrabold tracking-tight text-ink', item.model));
-        const selectId = `opcion-equipo-${++cardCount}`;
-        const label = createEl('label', 'mt-4 block text-sm font-semibold text-ink', 'Elegí tu opción');
-        label.htmlFor = selectId;
-        const select = createEl('select', 'mt-2 w-full min-w-0 rounded-xl border border-line bg-surface p-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent');
-        select.id = selectId;
-        item.variants.forEach((v, index) => {
-          const details = [v.storage, specText(v.specs)];
-          if (v.battery) details.push(`Batería ${v.battery}`);
-          if (v.sim) details.push('Con chip');
-          if (!v.colors.length) details.push('Color a consultar');
-          details.push(`${v.colors.length > 1 && v.priceUSD !== null ? 'Desde ' : ''}${money(v.priceUSD)}`);
-          const option = createEl('option', '', details.filter(Boolean).join(' · '));
-          option.value = String(index); select.appendChild(option);
+        /* Una píldora por variante: [ 128 GB ], [ 128 GB · 89% ], [ 128 GB · 89% · SIM ]. */
+        const optionsLabel = createEl('p', 'mt-4 text-sm font-semibold text-ink', 'Elegí tu opción');
+        optionsLabel.id = `opciones-equipo-${++cardCount}`;
+        const pills = createEl('div', 'mt-3 flex flex-wrap gap-2');
+        pills.setAttribute('role', 'radiogroup');
+        pills.setAttribute('aria-labelledby', optionsLabel.id);
+        const pillTexts = item.variants.map(v => ({ label: variantLabel(v), price: item.pricePending ? '' : variantPrice(v) }));
+        const repeated = {};
+        pillTexts.forEach(p => { const key = `${p.label}|${p.price}`; repeated[key] = (repeated[key] || 0) + 1; p.n = repeated[key]; });
+        pillTexts.forEach((p, index) => {
+          if (!p.label && item.variants.length > 1) p.label = `Opción ${index + 1}`;
+          else if (repeated[`${p.label}|${p.price}`] > 1) p.price = [p.price, `Opción ${p.n}`].filter(Boolean).join(' · ');
         });
+        let variantIndex = -1;
+        const pillButtons = item.variants.map((v, index) => {
+          const pill = createEl('button', 'variant-pill');
+          pill.type = 'button';
+          pill.setAttribute('role', 'radio');
+          pill.append(createEl('span', '', pillTexts[index].label || 'Opción única'));
+          if (pillTexts[index].price) pill.append(createEl('span', 'variant-pill__price', pillTexts[index].price));
+          pill.addEventListener('click', () => selectVariant(index));
+          pill.addEventListener('keydown', e => {
+            const keys = { ArrowRight: index + 1, ArrowDown: index + 1, ArrowLeft: index - 1, ArrowUp: index - 1, Home: 0, End: item.variants.length - 1 };
+            if (!(e.key in keys)) return;
+            e.preventDefault();
+            selectVariant((keys[e.key] + item.variants.length) % item.variants.length, true);
+          });
+          return pill;
+        });
+        pills.append(...pillButtons);
+        optionsLabel.hidden = pills.hidden = item.variants.length === 1 && !pillTexts[0].label;
         const summary = createEl('p', 'mt-3 text-sm leading-relaxed text-muted');
         const colorLabel = createEl('p', 'mt-4 text-sm font-semibold text-ink');
         const swatches = createEl('div', 'mt-3 flex flex-wrap items-start gap-4');
@@ -957,15 +1040,10 @@
         stockNotice.setAttribute('aria-live', 'polite');
         const priceNote = createEl('p', 'mt-1 text-xs leading-relaxed text-muted');
         priceSection.append(price, stockNotice, priceNote);
-        const cta = createEl('a', 'btn-card mt-5', 'Consultar por este equipo');
-        const stockCta = createEl('a', 'mt-3 block rounded-lg py-2 text-center text-sm font-semibold text-accent underline underline-offset-4', 'Consultar stock de esta opción');
-        card.append(label, select, summary, colorLabel, swatches, colorHint, priceSection, cta, stockCta);
-        const selectedVariant = () => item.variants[Number(select.value)];
+        const cta = createEl('a', 'btn-gold mt-5 w-full', 'Cotizar por WhatsApp');
+        card.append(optionsLabel, pills, summary, colorLabel, swatches, colorHint, createEl('div', 'flex-grow'), priceSection, cta);
+        const selectedVariant = () => item.variants[variantIndex];
         let visibleColors = [];
-        const disableLink = (link, disabled) => {
-          if (disabled) { link.removeAttribute('href'); link.setAttribute('aria-disabled', 'true'); link.tabIndex = -1; }
-          else { link.removeAttribute('aria-disabled'); link.removeAttribute('tabindex'); }
-        };
         const chooseColor = name => {
           const v = selectedVariant();
           const visual = visibleColors.find(c => c.name === name);
@@ -990,10 +1068,10 @@
           swatches.querySelectorAll('button').forEach(button => {
             const active = button.dataset.color === name;
             button.setAttribute('aria-pressed', String(active));
-            button.classList.toggle('ring-2', active); button.classList.toggle('ring-accent', active);
+            button.classList.toggle('ring-2', active); button.classList.toggle('ring-accent', active); button.classList.toggle('ring-offset-2', active);
           });
           const details = [item.model, item.conditionBadge, v.storage, specText(v.specs)];
-          if (v.battery) details.push(`batería informada: ${v.battery}`);
+          if (v.battery) details.push(`batería informada: ${batteryText(v.battery) || v.battery}`);
           if (v.sim) details.push('con chip');
           if (name) details.push(v.colors.length ? `color ${name}` : `color preferido ${name}, sujeto a confirmación`);
           if (canConsult) {
@@ -1002,30 +1080,30 @@
             const description = details.filter(Boolean).join(' · ');
             const selectedPrice = offer.priceUSD ?? v.priceUSD;
             const quote = typeof selectedPrice === 'number' ? ` Vi el precio de referencia de ${money(selectedPrice)}.` : '';
-            disableLink(cta, false); disableLink(stockCta, false);
-            cta.textContent = 'Consultar por este equipo';
-            setExtLink(cta, waUrl(`Hola Golden Touch! Me interesa ${description}.${quote}${refText} ¿Me confirman precio y cómo comprarlo?`));
-            setExtLink(stockCta, waUrl(`Hola Golden Touch! ¿Me confirman stock y precio de ${description}?${quote}${refText}`));
+            disableLink(cta, false);
+            cta.textContent = 'Cotizar por WhatsApp';
+            setExtLink(cta, waUrl(`Hola Golden Touch! Quiero cotizar ${description}.${quote}${refText} ¿Me confirman precio y disponibilidad?`));
           } else {
-            disableLink(cta, true); disableLink(stockCta, true);
+            disableLink(cta, true);
             cta.textContent = soldOut ? 'Color agotado' : 'Color sin disponibilidad confirmada';
           }
         };
         const updateVariant = () => {
           const v = selectedVariant();
-          summary.textContent = [v.storage, specText(v.specs), v.battery ? `Batería informada: ${v.battery}` : '', v.sim ? 'Con chip' : ''].filter(Boolean).join(' · ');
+          summary.textContent = [v.storage, specText(v.specs), v.battery ? `Batería informada: ${batteryText(v.battery) || v.battery}` : '', v.sim ? 'Con chip' : ''].filter(Boolean).join(' · ');
           const palette = new Map((item.displayColors || []).map(c => [c.name, c]));
           v.colors.forEach(c => palette.set(c.name, c));
           visibleColors = Array.from(palette.values());
           const hasUnlistedColors = v.colors.length > 0 && visibleColors.some(c => !v.colors.some(offer => offer.name === c.name));
           colorHint.textContent = !v.colors.length ? 'Colores a confirmar.' : hasUnlistedColors ? 'Los colores tachados no están incluidos en la lista para esta opción. Podés tocarlos para ver la foto.' : '';
           colorHint.hidden = !colorHint.textContent;
+          colorLabel.hidden = visibleColors.length === 0; // Sin círculos no tiene sentido «Elegí un color».
           swatches.replaceChildren();
           visibleColors.forEach(color => {
             const offer = v.colors.length ? v.colors.find(c => c.name === color.name) : v;
             const state = offer ? stockOf(offer) : 'no_listado';
             const choice = createEl('div', 'flex max-w-24 flex-col items-center gap-2 text-center');
-            const button = createEl('button', 'color-swatch h-7 w-7 rounded-full border border-line focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent');
+            const button = createEl('button', 'color-swatch h-9 w-9 rounded-full border border-line ring-offset-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2');
             button.type = 'button'; button.style.backgroundColor = color.hex;
             button.dataset.color = color.name; button.dataset.status = state;
             const statusHint = state === 'agotado' || state === 'no_listado' ? ` · ${stockText[state]}` : '';
@@ -1044,8 +1122,17 @@
           }
           chooseColor(v.colors.find(c => stockOf(c) === 'disponible')?.name || v.colors.find(c => stockOf(c) !== 'agotado')?.name || v.colors[0]?.name || '');
         };
-        select.addEventListener('change', updateVariant);
-        updateVariant(); li.appendChild(card); return li;
+        const selectVariant = (index, focus = false) => {
+          if (focus) pillButtons[index].focus();
+          if (index === variantIndex) return; // Repetir la píldora activa no reinicia el color elegido.
+          variantIndex = index;
+          pillButtons.forEach((pill, i) => {
+            pill.setAttribute('aria-checked', String(i === index));
+            pill.tabIndex = i === index ? 0 : -1;
+          });
+          updateVariant();
+        };
+        selectVariant(0); li.appendChild(card); return li;
       };
 
       Object.entries(CATALOG).forEach(([type, items]) => {
@@ -1123,6 +1210,74 @@
         }
       }));
 
+      /* Simulador de Plan Canje: rangos orientativos de toma (USD) aprobados; nunca un valor cerrado. */
+      const TRADE_IN = [
+        { models: ['iPhone 11'], min: 180, max: 230 },
+        { models: ['iPhone 11 Pro', 'iPhone 11 Pro Max'], min: 240, max: 300 },
+        { models: ['iPhone 12'], min: 260, max: 320 },
+        { models: ['iPhone 12 Pro', 'iPhone 12 Pro Max'], min: 340, max: 420 },
+        { models: ['iPhone 13'], min: 370, max: 440 },
+        { models: ['iPhone 13 Pro', 'iPhone 13 Pro Max'], min: 470, max: 580 },
+        { models: ['iPhone 14'], min: 440, max: 510 },
+        { models: ['iPhone 14 Pro', 'iPhone 14 Pro Max'], min: 590, max: 720 },
+        { models: ['iPhone 15'], min: 530, max: 630 },
+        { models: ['iPhone 15 Pro', 'iPhone 15 Pro Max'], min: 710, max: 890 }
+      ].flatMap(({ models, min, max }) => models.map(model => ({ model, min, max })));
+      /* Precio "desde" del equipo nuevo: la oferta más barata del catálogo que no esté agotada. */
+      const lowestPrice = item => {
+        const prices = item.variants
+          .flatMap(v => v.colors.length ? v.colors.map(c => ({ availability: c.availability, priceUSD: c.priceUSD ?? v.priceUSD })) : [v])
+          .filter(offer => stockOf(offer) !== 'agotado' && typeof offer.priceUSD === 'number')
+          .map(offer => offer.priceUSD);
+        return prices.length ? Math.min(...prices) : null;
+      };
+      const TARGETS = Object.entries(CATALOG)
+        .flatMap(([group, items]) => items.map(item => ({ group, item, price: lowestPrice(item) })))
+        .filter(target => target.price !== null);
+      const simActual = document.getElementById('sim-actual');
+      const simNuevo = document.getElementById('sim-nuevo');
+      if (simActual && simNuevo) {
+        const simToma = document.getElementById('sim-toma');
+        const simPrecio = document.getElementById('sim-precio');
+        const simDiferencia = document.getElementById('sim-diferencia');
+        const simNota = document.getElementById('sim-nota');
+        const simCta = document.getElementById('sim-cta');
+        simActual.append(new Option('Elegí tu modelo', ''), ...TRADE_IN.map((t, i) => new Option(t.model, String(i))));
+        simNuevo.append(new Option('Elegí el modelo que querés', ''));
+        Object.entries({ sellados: 'Nuevos sellados', seminuevos: 'Seminuevos seleccionados', openbox: 'Open box' }).forEach(([group, label]) => {
+          const options = TARGETS.map((t, i) => [t, i]).filter(([t]) => t.group === group).sort(([a], [b]) => a.price - b.price);
+          if (!options.length) return;
+          const optgroup = document.createElement('optgroup');
+          optgroup.label = label;
+          options.forEach(([t, i]) => optgroup.appendChild(new Option(`${t.item.model} · desde ${money(t.price)}`, String(i))));
+          simNuevo.appendChild(optgroup);
+        });
+        const updateSim = () => {
+          const current = TRADE_IN[simActual.value];
+          const target = TARGETS[simNuevo.value];
+          simToma.textContent = current ? `entre ${money(current.min)} y ${money(current.max)}` : '—';
+          simPrecio.textContent = target ? `desde ${money(target.price)}` : '—';
+          if (!current || !target) {
+            simDiferencia.textContent = '—';
+            simNota.textContent = 'Elegí los dos equipos para ver la diferencia estimada.';
+            disableLink(simCta, true);
+            return;
+          }
+          /* Nunca negativa: no se promete saldo a favor; los textos aprobados se mantienen literales. */
+          const difference = Math.max(0, target.price - current.max);
+          const newModel = `${target.item.model} (${target.item.conditionBadge.toLocaleLowerCase('es')})`;
+          simDiferencia.textContent = `desde ${money(difference)}`;
+          simNota.textContent = difference > 0
+            ? 'Calculada con el valor de toma más alto del rango y el precio más bajo del equipo nuevo.'
+            : 'Tu equipo podría cubrir el valor del nuevo. Lo confirmamos en la revisión en mano.';
+          setExtLink(simCta, waUrl(`Hola Golden Touch! Hice la simulación de Plan Canje en la web entregando mi ${current.model} por un ${newModel}. La diferencia estimada fue de aprox. ${money(difference)}. ¿Me confirman cotización para coordinar?`));
+          disableLink(simCta, false);
+        };
+        simActual.addEventListener('change', updateSim);
+        simNuevo.addEventListener('change', updateSim);
+        updateSim();
+      }
+
       /* Pestañas WAI-ARIA */
       const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
       const selectTab = (tab, focus = false) => {
@@ -1191,6 +1346,22 @@
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
+
+      /* Badge del botón flotante: lunes a sábado de 10 a 20 h, hora argentina (UTC−3). */
+      const waFloat = document.getElementById('wa-float');
+      const waBadge = document.getElementById('wa-float-badge');
+      const updateWaBadge = () => {
+        const now = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Argentina/Buenos_Aires', weekday: 'short', hour: 'numeric', hourCycle: 'h23' })
+          .formatToParts(new Date()).map(part => [part.type, part.value]));
+        const open = now.weekday !== 'Sun' && Number(now.hour) >= 10 && Number(now.hour) < 20;
+        const text = open ? 'En línea · Canning' : 'Dejanos tu consulta · Canning';
+        waBadge.textContent = `${open ? '🟢' : '🌙'} ${text}`;
+        waFloat.setAttribute('aria-label', `Escribinos por WhatsApp · ${text}`);
+      };
+      if (waFloat && waBadge) {
+        updateWaBadge();
+        setInterval(updateWaBadge, 60000);
+      }
 
       /* Año Dinámico */
       const yearEl = document.getElementById('year');
